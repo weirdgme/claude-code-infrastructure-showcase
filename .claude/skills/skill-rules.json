@@ -1,946 +1,959 @@
 {
-    "version": "1.0",
-    "description": "Skill activation triggers for Claude Code. Controls when skills automatically suggest or block actions.",
-    "skills": {
-        "skill-developer": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "Meta-skill for creating and managing Claude Code skills",
-            "promptTriggers": {
-                "keywords": [
-                    "skill system",
-                    "create skill",
-                    "add skill",
-                    "skill triggers",
-                    "skill rules",
-                    "hook system",
-                    "skill development",
-                    "skill-rules.json"
-                ],
-                "intentPatterns": [
-                    "(how do|how does|explain).*?skill",
-                    "(create|add|modify|build).*?skill",
-                    "skill.*?(work|trigger|activate|system)"
-                ]
-            }
-        },
-        "backend-dev-guidelines": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "Backend development patterns for Node.js/Express/TypeScript",
-            "promptTriggers": {
-                "keywords": [
-                    "backend",
-                    "backend development",
-                    "microservice",
-                    "controller",
-                    "service",
-                    "repository",
-                    "route",
-                    "routing",
-                    "express",
-                    "API",
-                    "endpoint",
-                    "middleware",
-                    "validation",
-                    "Zod",
-                    "Prisma",
-                    "database access",
-                    "BaseController",
-                    "dependency injection",
-                    "unifiedConfig",
-                    "configuration"
-                ],
-                "intentPatterns": [
-                    "(create|add|implement|build).*?(route|endpoint|API|controller|service|repository)",
-                    "(fix|handle|debug).*?(error|exception|backend)",
-                    "(add|implement).*?(middleware|validation|error.*?handling)",
-                    "(organize|structure|refactor).*?(backend|service|API)",
-                    "(how to|best practice).*?(backend|route|controller|service)"
-                ]
-            },
-            "fileTriggers": {
-                "pathPatterns": [
-                    "blog-api/src/**/*.ts",
-                    "auth-service/src/**/*.ts",
-                    "notifications-service/src/**/*.ts",
-                    "backend/**/*.ts",
-                    "api/**/*.ts",
-                    "server/**/*.ts",
-                    "services/**/*.ts"
-                ],
-                "pathExclusions": [
-                    "**/*.test.ts",
-                    "**/*.spec.ts"
-                ],
-                "contentPatterns": [
-                    "router\\.",
-                    "app\\.(get|post|put|delete|patch)",
-                    "export.*Controller",
-                    "export.*Service",
-                    "prisma\\."
-                ]
-            }
-        },
-        "frontend-dev-guidelines": {
-            "type": "guardrail",
-            "enforcement": "block",
-            "priority": "high",
-            "description": "React/TypeScript best practices including MUI v7 compatibility",
-            "promptTriggers": {
-                "keywords": [
-                    "component",
-                    "react component",
-                    "UI",
-                    "interface",
-                    "page",
-                    "modal",
-                    "dialog",
-                    "form",
-                    "MUI",
-                    "Material-UI",
-                    "Grid",
-                    "styling",
-                    "frontend",
-                    "React"
-                ],
-                "intentPatterns": [
-                    "(create|add|make|build|update|modify|edit).*?(component|UI|page|modal|dialog|form)",
-                    "(how to|best practice).*?(component|react|MUI)",
-                    "(style|design|layout).*?(component|UI)"
-                ]
-            },
-            "fileTriggers": {
-                "pathPatterns": [
-                    "frontend/src/**/*.tsx",
-                    "frontend/src/**/*.ts",
-                    "client/src/**/*.tsx",
-                    "client/src/**/*.ts",
-                    "src/**/*.tsx"
-                ],
-                "pathExclusions": [
-                    "**/*.test.tsx",
-                    "**/*.test.ts",
-                    "**/*.spec.tsx",
-                    "**/*.spec.ts",
-                    "**/*.styles.ts",
-                    "**/vite.config.ts",
-                    "**/tsconfig.json"
-                ],
-                "contentPatterns": [
-                    "from '@mui/material';",
-                    "import.*Grid.*from.*@mui",
-                    "<Grid ",
-                    "Grid2",
-                    "Unstable_Grid",
-                    "makeStyles",
-                    "@material-ui/core"
-                ]
-            },
-            "blockMessage": "⚠️ BLOCKED - Frontend Best Practices Required\n\n📋 REQUIRED ACTION:\n1. Use Skill tool: 'frontend-dev-guidelines'\n2. Review MUI v7 patterns (Grid uses size={{}} prop, NOT xs/sm props)\n3. Check React/TypeScript best practices\n4. Use proper styling patterns\n5. Then retry this edit\n\nReason: Enforce MUI v7 compatibility and React best practices\nFile: {file_path}\n\n💡 TIP: Add '// @skip-validation' comment to skip future checks",
-            "skipConditions": {
-                "sessionSkillUsed": true,
-                "fileMarkers": [
-                    "@skip-validation"
-                ],
-                "envOverride": "SKIP_FRONTEND_GUIDELINES"
-            }
-        },
-        "route-tester": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "Testing authenticated API routes with JWT cookie-based auth",
-            "promptTriggers": {
-                "keywords": [
-                    "test route",
-                    "test endpoint",
-                    "test API",
-                    "route testing",
-                    "API testing",
-                    "authenticated route",
-                    "JWT testing",
-                    "cookie auth",
-                    "test with auth"
-                ],
-                "intentPatterns": [
-                    "(test|debug|verify).*?(route|endpoint|API)",
-                    "(how to|how do I).*?test.*?(route|endpoint|API)",
-                    "test.*?(authenticated|auth|JWT|cookie)"
-                ]
-            },
-            "fileTriggers": {
-                "pathPatterns": [
-                    "**/routes/**/*.ts",
-                    "**/test-*.js",
-                    "**/test-*.ts"
-                ],
-                "contentPatterns": [
-                    "router\\.(get|post|put|delete|patch)",
-                    "app\\.(get|post|put|delete|patch)"
-                ]
-            }
-        },
-        "error-tracking": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "Sentry error tracking and performance monitoring patterns",
-            "promptTriggers": {
-                "keywords": [
-                    "error handling",
-                    "exception",
-                    "sentry",
-                    "error tracking",
-                    "captureException",
-                    "monitoring",
-                    "performance tracking"
-                ],
-                "intentPatterns": [
-                    "(add|create|implement|setup).*?(error handling|sentry|error tracking)",
-                    "(fix|handle|catch).*?(error|exception)",
-                    "(how to|best practice).*?(error|sentry|monitoring)"
-                ]
-            },
-            "fileTriggers": {
-                "pathPatterns": [
-                    "**/instrument.ts",
-                    "**/sentry*.ts",
-                    "**/*Controller.ts",
-                    "**/*Service.ts"
-                ],
-                "contentPatterns": [
-                    "@sentry",
-                    "Sentry\\.",
-                    "captureException",
-                    "captureMessage"
-                ]
-            }
-        },
-        "platform-engineering": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "Platform engineering and architecture for IaC, Kubernetes, GitOps, service mesh, and developer platforms",
-            "promptTriggers": {
-                "keywords": [
-                    "infrastructure as code",
-                    "IaC",
-                    "terraform",
-                    "pulumi",
-                    "cloudformation",
-                    "kubernetes",
-                    "k8s",
-                    "container orchestration",
-                    "helm",
-                    "kustomize",
-                    "gitops",
-                    "argocd",
-                    "flux",
-                    "service mesh",
-                    "istio",
-                    "linkerd",
-                    "backstage",
-                    "developer platform",
-                    "platform architecture",
-                    "multi-tenancy",
-                    "resource quota",
-                    "autoscaling",
-                    "HPA",
-                    "VPA",
-                    "cost optimization",
-                    "finops"
-                ],
-                "intentPatterns": [
-                    "(create|setup|implement|configure).*?(infrastructure|platform|kubernetes|terraform)",
-                    "(deploy|orchestrate).*?(container|kubernetes|k8s)",
-                    "(design|architect|build).*?(platform|infrastructure)",
-                    "(gitops|argocd|flux).*?(deploy|sync|automation)",
-                    "(service mesh|istio|linkerd).*?(traffic|security|routing)"
-                ]
-            },
-            "fileTriggers": {
-                "pathPatterns": [
-                    "**/*.tf",
-                    "**/*.tfvars",
-                    "**/terraform/**/*",
-                    "**/k8s/**/*.yaml",
-                    "**/kubernetes/**/*.yaml",
-                    "**/helm/**/*",
-                    "**/kustomize/**/*",
-                    "**/manifests/**/*.yaml",
-                    "**/argocd/**/*",
-                    "**/flux/**/*"
-                ],
-                "contentPatterns": [
-                    "apiVersion:.*k8s\\.io",
-                    "kind: (Deployment|Service|Ingress|StatefulSet|DaemonSet)",
-                    "terraform \\{",
-                    "resource \"aws_",
-                    "resource \"azurerm_",
-                    "resource \"google_"
-                ]
-            }
-        },
-        "devsecops": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "DevSecOps practices including security scanning, container security, secrets management, and policy enforcement",
-            "promptTriggers": {
-                "keywords": [
-                    "security",
-                    "security scan",
-                    "vulnerability",
-                    "SAST",
-                    "DAST",
-                    "SCA",
-                    "trivy",
-                    "snyk",
-                    "semgrep",
-                    "security scanning",
-                    "container security",
-                    "image scanning",
-                    "secrets management",
-                    "vault",
-                    "sealed secrets",
-                    "external secrets",
-                    "security policy",
-                    "OPA",
-                    "gatekeeper",
-                    "kyverno",
-                    "compliance",
-                    "policy enforcement",
-                    "pod security"
-                ],
-                "intentPatterns": [
-                    "(scan|check|find|detect).*?(vulnerability|security|secret|credential)",
-                    "(implement|add|setup|configure).*?(security|scanning|secrets|vault)",
-                    "(policy|compliance|enforce).*?(security|standard|baseline)",
-                    "(harden|secure).*?(container|image|pod|cluster)"
-                ]
-            },
-            "fileTriggers": {
-                "pathPatterns": [
-                    "**/.trivyignore",
-                    "**/security/**/*.yaml",
-                    "**/policies/**/*.rego",
-                    "**/policies/**/*.yaml",
-                    "**/vault/**/*",
-                    "**/*-policy.yaml",
-                    "**/gatekeeper/**/*",
-                    "**/kyverno/**/*"
-                ],
-                "contentPatterns": [
-                    "kind: (ConstraintTemplate|ClusterPolicy|Policy)",
-                    "apiVersion:.*gatekeeper",
-                    "apiVersion:.*kyverno",
-                    "trivy",
-                    "snyk",
-                    "securityContext:",
-                    "podSecurityPolicy"
-                ]
-            }
-        },
-        "sre": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "Site Reliability Engineering practices including SLO/SLI, error budgets, incident management, and observability",
-            "promptTriggers": {
-                "keywords": [
-                    "SLO",
-                    "SLI",
-                    "SLA",
-                    "service level",
-                    "error budget",
-                    "incident",
-                    "outage",
-                    "postmortem",
-                    "post-mortem",
-                    "on-call",
-                    "runbook",
-                    "observability",
-                    "monitoring",
-                    "alerting",
-                    "prometheus",
-                    "grafana",
-                    "chaos engineering",
-                    "fault injection",
-                    "reliability",
-                    "availability",
-                    "capacity planning",
-                    "performance"
-                ],
-                "intentPatterns": [
-                    "(define|create|implement|measure).*?(SLO|SLI|SLA|error budget)",
-                    "(incident|outage|down|degraded).*?(response|debug|investigate)",
-                    "(monitor|alert|observe|track).*?(service|system|metric)",
-                    "(chaos|fault).*?(engineering|injection|test)",
-                    "(runbook|playbook|procedure).*?(incident|debug)"
-                ]
-            },
-            "fileTriggers": {
-                "pathPatterns": [
-                    "**/monitoring/**/*.yaml",
-                    "**/alerts/**/*.yaml",
-                    "**/prometheus/**/*",
-                    "**/grafana/**/*",
-                    "**/runbooks/**/*.md",
-                    "**/slo/**/*.yaml",
-                    "**/chaos/**/*"
-                ],
-                "contentPatterns": [
-                    "kind: (PrometheusRule|ServiceMonitor|Alert)",
-                    "expr:",
-                    "for: [0-9]+(s|m|h)",
-                    "severity: (critical|warning|info)"
-                ]
-            }
-        },
-        "release-engineering": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "Release engineering including CI/CD, deployment strategies, versioning, artifact management, and progressive delivery",
-            "promptTriggers": {
-                "keywords": [
-                    "CI/CD",
-                    "pipeline",
-                    "deployment",
-                    "release",
-                    "deploy",
-                    "artifact",
-                    "build",
-                    "canary",
-                    "blue-green",
-                    "rolling update",
-                    "rollback",
-                    "versioning",
-                    "semantic version",
-                    "feature flag",
-                    "progressive delivery",
-                    "GitHub Actions",
-                    "GitLab CI",
-                    "Jenkins",
-                    "Flagger",
-                    "ArgoCD"
-                ],
-                "intentPatterns": [
-                    "(create|setup|configure|implement).*?(pipeline|CI/CD|deployment)",
-                    "(deploy|release).*?(application|service|code)",
-                    "(rollback|revert).*?(deployment|release)",
-                    "(canary|blue-green|rolling).*?(deploy|deployment|release)",
-                    "(automate|automation).*?(release|deployment)"
-                ]
-            },
-            "fileTriggers": {
-                "pathPatterns": [
-                    "**/.github/workflows/**/*.yml",
-                    "**/.github/workflows/**/*.yaml",
-                    "**/.gitlab-ci.yml",
-                    "**/Jenkinsfile",
-                    "**/azure-pipelines.yml",
-                    "**/cloudbuild.yaml",
-                    "**/flagger/**/*.yaml",
-                    "**/argocd/**/*.yaml"
-                ],
-                "contentPatterns": [
-                    "kind: Canary",
-                    "kind: Application",
-                    "jobs:",
-                    "stages:",
-                    "pipeline"
-                ]
-            }
-        },
-        "cloud-engineering": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "Cloud engineering covering AWS, Azure, GCP patterns, cloud-native services, and multi-cloud strategies",
-            "promptTriggers": {
-                "keywords": [
-                    "AWS",
-                    "Azure",
-                    "GCP",
-                    "Google Cloud",
-                    "cloud",
-                    "EC2",
-                    "S3",
-                    "Lambda",
-                    "EKS",
-                    "ECS",
-                    "RDS",
-                    "DynamoDB",
-                    "CloudFormation",
-                    "ARM template",
-                    "Cloud Functions",
-                    "Cloud Run",
-                    "serverless",
-                    "multi-cloud",
-                    "cloud migration",
-                    "well-architected"
-                ],
-                "intentPatterns": [
-                    "(AWS|Azure|GCP).*?(setup|configure|deploy|create)",
-                    "(migrate|migration).*?(cloud|AWS|Azure|GCP)",
-                    "(serverless|lambda).*?(function|deployment)",
-                    "(cloud|multi-cloud).*?(architecture|strategy|pattern)"
-                ]
-            },
-            "fileTriggers": {
-                "pathPatterns": [
-                    "**/*cloudformation*.yaml",
-                    "**/*cloudformation*.yml",
-                    "**/*.bicep",
-                    "**/deployment-manager/**/*.yaml"
-                ],
-                "contentPatterns": [
-                    "AWSTemplateFormatVersion",
-                    "resource \"aws_",
-                    "resource \"azurerm_",
-                    "resource \"google_"
-                ]
-            }
-        },
-        "systems-engineering": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "Systems engineering and administration covering Linux and Windows administration, networking, performance tuning, configuration management (Ansible/Chef/Puppet/DSC), shell scripting (bash/PowerShell), and troubleshooting",
-            "promptTriggers": {
-                "keywords": [
-                    "Linux",
-                    "Windows",
-                    "Windows Server",
-                    "system administration",
-                    "systemd",
-                    "Active Directory",
-                    "AD",
-                    "GPO",
-                    "Group Policy",
-                    "PowerShell",
-                    "IIS",
-                    "networking",
-                    "TCP/IP",
-                    "DNS",
-                    "firewall",
-                    "iptables",
-                    "performance tuning",
-                    "Ansible",
-                    "Chef",
-                    "Puppet",
-                    "DSC",
-                    "Desired State Configuration",
-                    "shell script",
-                    "bash",
-                    "configuration management",
-                    "troubleshooting",
-                    "security hardening"
-                ],
-                "intentPatterns": [
-                    "(Linux|Windows|system).*?(admin|administration|configure|setup)",
-                    "(Active Directory|AD|GPO).*?(manage|configure|create)",
-                    "(PowerShell|bash).*?(script|automation)",
-                    "(network|networking).*?(configure|troubleshoot|debug)",
-                    "(performance|optimize|tuning).*?(system|server|Linux|Windows)",
-                    "(Ansible|Chef|Puppet|DSC).*?(playbook|recipe|manifest|configuration)",
-                    "(IIS|web server).*?(configure|setup|manage)"
-                ]
-            },
-            "fileTriggers": {
-                "pathPatterns": [
-                    "**/ansible/**/*.yml",
-                    "**/ansible/**/*.yaml",
-                    "**/playbooks/**/*.yml",
-                    "**/*.sh",
-                    "**/*.ps1",
-                    "**/chef/**/*.rb",
-                    "**/puppet/**/*.pp",
-                    "**/scripts/**/*.ps1",
-                    "**/powershell/**/*.ps1"
-                ],
-                "contentPatterns": [
-                    "- hosts:",
-                    "- name:.*tasks:",
-                    "#!/bin/bash",
-                    "#!/bin/sh",
-                    "#Requires -Version",
-                    "Get-",
-                    "Set-",
-                    "New-",
-                    "Remove-",
-                    "Import-Module"
-                ]
-            }
-        },
-        "network-engineering": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "Network engineering covering network design, TCP/IP, load balancing, firewalls, DNS",
-            "promptTriggers": {
-                "keywords": [
-                    "network",
-                    "networking",
-                    "load balancing",
-                    "firewall",
-                    "DNS",
-                    "routing",
-                    "switching",
-                    "VPN",
-                    "HAProxy",
-                    "nginx",
-                    "iptables",
-                    "TCP/IP"
-                ],
-                "intentPatterns": [
-                    "(configure|setup|design).*?(network|load balanc|firewall|DNS)",
-                    "(debug|troubleshoot).*?(network|connectivity|latency)",
-                    "(routing|switching|VPN).*?(configure|setup)"
-                ]
-            },
-            "fileTriggers": {
-                "pathPatterns": [
-                    "**/haproxy.cfg",
-                    "**/nginx.conf",
-                    "**/network/**/*",
-                    "**/firewall/**/*"
-                ],
-                "contentPatterns": [
-                    "frontend",
-                    "backend",
-                    "listen",
-                    "bind"
-                ]
-            }
-        },
-        "build-engineering": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "Build engineering covering build systems, compilation, dependency management, artifact repositories",
-            "promptTriggers": {
-                "keywords": [
-                    "build",
-                    "gradle",
-                    "maven",
-                    "bazel",
-                    "make",
-                    "compilation",
-                    "artifact",
-                    "dependency",
-                    "monorepo",
-                    "build system"
-                ],
-                "intentPatterns": [
-                    "(optimize|speed up|improve).*?build",
-                    "(gradle|maven|bazel|make).*?(build|compile)",
-                    "(monorepo|dependency).*?(manage|setup)"
-                ]
-            },
-            "fileTriggers": {
-                "pathPatterns": [
-                    "**/Makefile",
-                    "**/build.gradle",
-                    "**/pom.xml",
-                    "**/BUILD",
-                    "**/WORKSPACE"
-                ],
-                "contentPatterns": [
-                    "dependencies \\{",
-                    "plugins \\{",
-                    "<dependencies>"
-                ]
-            }
-        },
-        "general-it-engineering": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "medium",
-            "description": "General IT engineering covering ITIL, service management, change management, IT governance",
-            "promptTriggers": {
-                "keywords": [
-                    "ITIL",
-                    "ITSM",
-                    "service management",
-                    "change management",
-                    "incident management",
-                    "help desk",
-                    "IT governance",
-                    "CMDB",
-                    "service catalog"
-                ],
-                "intentPatterns": [
-                    "(ITIL|ITSM|service).*?(management|process|framework)",
-                    "(incident|change|problem).*?(management|process)",
-                    "(help desk|service desk).*?(setup|process)"
-                ]
-            }
-        },
-        "infrastructure-architecture": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "Infrastructure architecture covering system design patterns, ADRs, multi-region design, disaster recovery, capacity planning, and reference architectures",
-            "promptTriggers": {
-                "keywords": [
-                    "architecture",
-                    "ADR",
-                    "architecture decision",
-                    "system design",
-                    "multi-region",
-                    "disaster recovery",
-                    "DR",
-                    "RTO",
-                    "RPO",
-                    "capacity planning",
-                    "reference architecture",
-                    "architectural pattern",
-                    "microservices architecture",
-                    "event-driven architecture",
-                    "CQRS",
-                    "migration architecture"
-                ],
-                "intentPatterns": [
-                    "(design|architect|plan).*?(architecture|system|infrastructure)",
-                    "(ADR|architecture decision).*?(create|write|document)",
-                    "(multi-region|disaster recovery|DR).*?(design|plan|setup)",
-                    "(capacity|scaling).*?(plan|estimate|calculate)",
-                    "(reference architecture|architectural pattern).*?(example|template)"
-                ]
-            },
-            "fileTriggers": {
-                "pathPatterns": [
-                    "**/docs/architecture/**/*.md",
-                    "**/ADR/**/*.md",
-                    "**/adr/**/*.md",
-                    "**/architecture/**/*.md"
-                ],
-                "contentPatterns": [
-                    "# ADR-",
-                    "Architecture Decision Record",
-                    "## Context",
-                    "## Decision",
-                    "## Consequences"
-                ]
-            }
-        },
-        "documentation-as-code": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "Documentation as code covering technical writing, API documentation, diagrams, documentation sites, and automation",
-            "promptTriggers": {
-                "keywords": [
-                    "documentation",
-                    "docs",
-                    "README",
-                    "technical writing",
-                    "API documentation",
-                    "OpenAPI",
-                    "Swagger",
-                    "diagram",
-                    "PlantUML",
-                    "Mermaid",
-                    "Docusaurus",
-                    "MkDocs",
-                    "changelog",
-                    "docs site",
-                    "documentation automation"
-                ],
-                "intentPatterns": [
-                    "(create|write|update).*?(documentation|docs|README)",
-                    "(API|endpoint).*?(documentation|document)",
-                    "(diagram|architecture diagram).*?(create|generate)",
-                    "(docs site|documentation site).*?(setup|build|deploy)",
-                    "(technical writing|writing guide).*?(style|best practice)"
-                ]
-            },
-            "fileTriggers": {
-                "pathPatterns": [
-                    "**/README.md",
-                    "**/docs/**/*.md",
-                    "**/openapi.yaml",
-                    "**/swagger.json",
-                    "**/*.puml",
-                    "**/docusaurus.config.js",
-                    "**/mkdocs.yml"
-                ],
-                "contentPatterns": [
-                    "```mermaid",
-                    "@startuml",
-                    "openapi: 3",
-                    "# API Documentation"
-                ]
-            }
-        },
-        "observability-engineering": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "Observability engineering covering distributed tracing, OpenTelemetry, APM tools, logs aggregation, and correlation strategies",
-            "promptTriggers": {
-                "keywords": [
-                    "observability",
-                    "distributed tracing",
-                    "tracing",
-                    "OpenTelemetry",
-                    "OTEL",
-                    "Jaeger",
-                    "Tempo",
-                    "Zipkin",
-                    "APM",
-                    "DataDog",
-                    "New Relic",
-                    "Dynatrace",
-                    "logs aggregation",
-                    "ELK",
-                    "Loki",
-                    "correlation",
-                    "trace ID",
-                    "span",
-                    "structured logging"
-                ],
-                "intentPatterns": [
-                    "(distributed tracing|tracing).*?(implement|setup|configure)",
-                    "(OpenTelemetry|OTEL).*?(instrumentation|setup|collector)",
-                    "(APM|DataDog|New Relic).*?(setup|integrate|configure)",
-                    "(logs|logging).*?(aggregation|centralize|correlation)",
-                    "(observability|correlation).*?(strategy|implement|setup)"
-                ]
-            },
-            "fileTriggers": {
-                "pathPatterns": [
-                    "**/otel-*.yaml",
-                    "**/otel-*.yml",
-                    "**/jaeger/**/*",
-                    "**/tempo/**/*",
-                    "**/loki/**/*",
-                    "**/instrumentation.ts",
-                    "**/tracing.ts"
-                ],
-                "contentPatterns": [
-                    "OpenTelemetry",
-                    "tracer.startSpan",
-                    "@opentelemetry",
-                    "span.setAttribute",
-                    "trace.getTracer"
-                ]
-            }
-        },
-        "database-engineering": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "Database engineering covering PostgreSQL/MySQL administration, query optimization, indexing, replication, and backup/recovery",
-            "promptTriggers": {
-                "keywords": [
-                    "database",
-                    "PostgreSQL",
-                    "MySQL",
-                    "query optimization",
-                    "EXPLAIN",
-                    "index",
-                    "indexing",
-                    "database replication",
-                    "pg_dump",
-                    "backup",
-                    "database administration",
-                    "database tuning",
-                    "slow query"
-                ],
-                "intentPatterns": [
-                    "(database|PostgreSQL|MySQL).*?(administration|admin|configure|optimize)",
-                    "(query|SQL).*?(optimization|optimize|slow|performance)",
-                    "(index|indexing).*?(create|strategy|design)",
-                    "(replication|replica).*?(setup|configure|streaming)",
-                    "(backup|restore|recovery).*?(database|pg_dump)"
-                ]
-            },
-            "fileTriggers": {
-                "pathPatterns": [
-                    "**/postgresql.conf",
-                    "**/my.cnf",
-                    "**/*.sql",
-                    "**/migrations/**/*.sql",
-                    "**/backup*.sh"
-                ],
-                "contentPatterns": [
-                    "CREATE INDEX",
-                    "EXPLAIN ANALYZE",
-                    "pg_dump",
-                    "max_connections",
-                    "shared_buffers"
-                ]
-            }
-        },
-        "api-engineering": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "API engineering covering REST API design, GraphQL, API gateways, rate limiting, and versioning strategies",
-            "promptTriggers": {
-                "keywords": [
-                    "API design",
-                    "REST API",
-                    "RESTful",
-                    "GraphQL",
-                    "gRPC",
-                    "API gateway",
-                    "rate limiting",
-                    "API versioning",
-                    "API security",
-                    "OAuth2",
-                    "JWT",
-                    "Kong",
-                    "Ambassador"
-                ],
-                "intentPatterns": [
-                    "(API|REST|GraphQL).*?(design|pattern|best practice)",
-                    "(rate limit|throttling).*?(implement|setup|configure)",
-                    "(API version|versioning).*?(strategy|implement)",
-                    "(API gateway|Kong|Ambassador).*?(setup|configure)",
-                    "(GraphQL|schema).*?(design|resolver|N\\+1)"
-                ]
-            },
-            "fileTriggers": {
-                "pathPatterns": [
-                    "**/graphql/**/*.ts",
-                    "**/*.graphql",
-                    "**/schema.graphql",
-                    "**/resolvers/**/*.ts",
-                    "**/api/**/*gateway*"
-                ],
-                "contentPatterns": [
-                    "type Query \\{",
-                    "type Mutation \\{",
-                    "graphql",
-                    "DataLoader",
-                    "rate-limit"
-                ]
-            }
-        }
+  "version": "1.0",
+  "description": "Skill activation triggers for Claude Code. Controls when skills automatically suggest or block actions.",
+  "skills": {
+    "skill-developer": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Meta-skill for creating and managing Claude Code skills",
+      "promptTriggers": {
+        "keywords": [
+          "skill system",
+          "create skill",
+          "add skill",
+          "skill triggers",
+          "skill rules",
+          "hook system",
+          "skill development",
+          "skill-rules.json"
+        ],
+        "intentPatterns": [
+          "(how do|how does|explain).*?skill",
+          "(create|add|modify|build).*?skill",
+          "skill.*?(work|trigger|activate|system)"
+        ]
+      }
     },
-    "notes": {
-        "enforcement_types": {
-            "suggest": "Skill suggestion appears but doesn't block execution",
-            "block": "Requires skill to be used before proceeding (guardrail)",
-            "warn": "Shows warning but allows proceeding"
-        },
-        "priority_levels": {
-            "critical": "Highest - Always trigger when matched",
-            "high": "Important - Trigger for most matches",
-            "medium": "Moderate - Trigger for clear matches",
-            "low": "Optional - Trigger only for explicit matches"
-        },
-        "customization": {
-            "pathPatterns": "Adjust to match your project structure (blog-api, auth-service, etc.)",
-            "keywords": "Add domain-specific terms relevant to your project",
-            "intentPatterns": "Use regex for flexible user intent matching"
-        }
+    "backend-dev-guidelines": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Backend development patterns for Node.js/Express/TypeScript",
+      "promptTriggers": {
+        "keywords": [
+          "backend",
+          "backend development",
+          "microservice",
+          "controller",
+          "service",
+          "repository",
+          "route",
+          "routing",
+          "express",
+          "API",
+          "endpoint",
+          "middleware",
+          "validation",
+          "Zod",
+          "Prisma",
+          "database access",
+          "BaseController",
+          "dependency injection",
+          "unifiedConfig",
+          "configuration"
+        ],
+        "intentPatterns": [
+          "(create|add|implement|build).*?(route|endpoint|API|controller|service|repository)",
+          "(fix|handle|debug).*?(error|exception|backend)",
+          "(add|implement).*?(middleware|validation|error.*?handling)",
+          "(organize|structure|refactor).*?(backend|service|API)",
+          "(how to|best practice).*?(backend|route|controller|service)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "blog-api/src/**/*.ts",
+          "auth-service/src/**/*.ts",
+          "notifications-service/src/**/*.ts",
+          "backend/**/*.ts",
+          "api/**/*.ts",
+          "server/**/*.ts",
+          "services/**/*.ts"
+        ],
+        "pathExclusions": [
+          "**/*.test.ts",
+          "**/*.spec.ts"
+        ],
+        "contentPatterns": [
+          "router\\.",
+          "app\\.(get|post|put|delete|patch)",
+          "export.*Controller",
+          "export.*Service",
+          "prisma\\."
+        ]
+      }
+    },
+    "frontend-dev-guidelines": {
+      "type": "guardrail",
+      "enforcement": "block",
+      "priority": "high",
+      "description": "React/TypeScript best practices including MUI v7 compatibility",
+      "promptTriggers": {
+        "keywords": [
+          "component",
+          "react component",
+          "UI",
+          "interface",
+          "page",
+          "modal",
+          "dialog",
+          "form",
+          "MUI",
+          "Material-UI",
+          "Grid",
+          "styling",
+          "frontend",
+          "React"
+        ],
+        "intentPatterns": [
+          "(create|add|make|build|update|modify|edit).*?(component|UI|page|modal|dialog|form)",
+          "(how to|best practice).*?(component|react|MUI)",
+          "(style|design|layout).*?(component|UI)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "frontend/src/**/*.tsx",
+          "frontend/src/**/*.ts",
+          "client/src/**/*.tsx",
+          "client/src/**/*.ts",
+          "src/**/*.tsx"
+        ],
+        "pathExclusions": [
+          "**/*.test.tsx",
+          "**/*.test.ts",
+          "**/*.spec.tsx",
+          "**/*.spec.ts",
+          "**/*.styles.ts",
+          "**/vite.config.ts",
+          "**/tsconfig.json"
+        ],
+        "contentPatterns": [
+          "from '@mui/material';",
+          "import.*Grid.*from.*@mui",
+          "<Grid ",
+          "Grid2",
+          "Unstable_Grid",
+          "makeStyles",
+          "@material-ui/core"
+        ]
+      },
+      "blockMessage": "⚠️ BLOCKED - Frontend Best Practices Required\n\n📋 REQUIRED ACTION:\n1. Use Skill tool: 'frontend-dev-guidelines'\n2. Review MUI v7 patterns (Grid uses size={{}} prop, NOT xs/sm props)\n3. Check React/TypeScript best practices\n4. Use proper styling patterns\n5. Then retry this edit\n\nReason: Enforce MUI v7 compatibility and React best practices\nFile: {file_path}\n\n💡 TIP: Add '// @skip-validation' comment to skip future checks",
+      "skipConditions": {
+        "sessionSkillUsed": true,
+        "fileMarkers": [
+          "@skip-validation"
+        ],
+        "envOverride": "SKIP_FRONTEND_GUIDELINES"
+      }
+    },
+    "route-tester": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Testing authenticated API routes with JWT cookie-based auth",
+      "promptTriggers": {
+        "keywords": [
+          "test route",
+          "test endpoint",
+          "test API",
+          "route testing",
+          "API testing",
+          "authenticated route",
+          "JWT testing",
+          "cookie auth",
+          "test with auth"
+        ],
+        "intentPatterns": [
+          "(test|debug|verify).*?(route|endpoint|API)",
+          "(how to|how do I).*?test.*?(route|endpoint|API)",
+          "test.*?(authenticated|auth|JWT|cookie)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/routes/**/*.ts",
+          "**/test-*.js",
+          "**/test-*.ts"
+        ],
+        "contentPatterns": [
+          "router\\.(get|post|put|delete|patch)",
+          "app\\.(get|post|put|delete|patch)"
+        ]
+      }
+    },
+    "error-tracking": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Sentry error tracking and performance monitoring patterns",
+      "promptTriggers": {
+        "keywords": [
+          "error handling",
+          "exception",
+          "sentry",
+          "error tracking",
+          "captureException",
+          "monitoring",
+          "performance tracking"
+        ],
+        "intentPatterns": [
+          "(add|create|implement|setup).*?(error handling|sentry|error tracking)",
+          "(fix|handle|catch).*?(error|exception)",
+          "(how to|best practice).*?(error|sentry|monitoring)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/instrument.ts",
+          "**/sentry*.ts",
+          "**/*Controller.ts",
+          "**/*Service.ts"
+        ],
+        "contentPatterns": [
+          "@sentry",
+          "Sentry\\.",
+          "captureException",
+          "captureMessage"
+        ]
+      }
+    },
+    "platform-engineering": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Platform engineering and architecture for IaC, Kubernetes, GitOps, service mesh, and developer platforms",
+      "promptTriggers": {
+        "keywords": [
+          "infrastructure as code",
+          "IaC",
+          "terraform",
+          "pulumi",
+          "cloudformation",
+          "kubernetes",
+          "k8s",
+          "container orchestration",
+          "helm",
+          "kustomize",
+          "gitops",
+          "argocd",
+          "flux",
+          "service mesh",
+          "istio",
+          "linkerd",
+          "backstage",
+          "developer platform",
+          "platform architecture",
+          "multi-tenancy",
+          "resource quota",
+          "autoscaling",
+          "HPA",
+          "VPA",
+          "cost optimization",
+          "finops"
+        ],
+        "intentPatterns": [
+          "(create|setup|implement|configure).*?(infrastructure|platform|kubernetes|terraform)",
+          "(deploy|orchestrate).*?(container|kubernetes|k8s)",
+          "(design|architect|build).*?(platform|infrastructure)",
+          "(gitops|argocd|flux).*?(deploy|sync|automation)",
+          "(service mesh|istio|linkerd).*?(traffic|security|routing)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/*.tf",
+          "**/*.tfvars",
+          "**/terraform/**/*",
+          "**/k8s/**/*.yaml",
+          "**/kubernetes/**/*.yaml",
+          "**/helm/**/*",
+          "**/kustomize/**/*",
+          "**/manifests/**/*.yaml",
+          "**/argocd/**/*",
+          "**/flux/**/*"
+        ],
+        "contentPatterns": [
+          "apiVersion:.*k8s\\.io",
+          "kind: (Deployment|Service|Ingress|StatefulSet|DaemonSet)",
+          "terraform \\{",
+          "resource \"aws_",
+          "resource \"azurerm_",
+          "resource \"google_"
+        ]
+      }
+    },
+    "devsecops": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "DevSecOps practices including security scanning, container security, secrets management, and policy enforcement",
+      "promptTriggers": {
+        "keywords": [
+          "security",
+          "security scan",
+          "vulnerability",
+          "SAST",
+          "DAST",
+          "SCA",
+          "trivy",
+          "snyk",
+          "semgrep",
+          "security scanning",
+          "container security",
+          "image scanning",
+          "secrets management",
+          "vault",
+          "sealed secrets",
+          "external secrets",
+          "security policy",
+          "OPA",
+          "gatekeeper",
+          "kyverno",
+          "compliance",
+          "policy enforcement",
+          "pod security"
+        ],
+        "intentPatterns": [
+          "(scan|check|find|detect).*?(vulnerability|security|secret|credential)",
+          "(implement|add|setup|configure).*?(security|scanning|secrets|vault)",
+          "(policy|compliance|enforce).*?(security|standard|baseline)",
+          "(harden|secure).*?(container|image|pod|cluster)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/.trivyignore",
+          "**/security/**/*.yaml",
+          "**/policies/**/*.rego",
+          "**/policies/**/*.yaml",
+          "**/vault/**/*",
+          "**/*-policy.yaml",
+          "**/gatekeeper/**/*",
+          "**/kyverno/**/*"
+        ],
+        "contentPatterns": [
+          "kind: (ConstraintTemplate|ClusterPolicy|Policy)",
+          "apiVersion:.*gatekeeper",
+          "apiVersion:.*kyverno",
+          "trivy",
+          "snyk",
+          "securityContext:",
+          "podSecurityPolicy"
+        ]
+      }
+    },
+    "sre": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Site Reliability Engineering practices including SLO/SLI, error budgets, incident management, and observability",
+      "promptTriggers": {
+        "keywords": [
+          "SLO",
+          "SLI",
+          "SLA",
+          "service level",
+          "error budget",
+          "incident",
+          "outage",
+          "postmortem",
+          "post-mortem",
+          "on-call",
+          "runbook",
+          "observability",
+          "monitoring",
+          "alerting",
+          "prometheus",
+          "grafana",
+          "chaos engineering",
+          "fault injection",
+          "reliability",
+          "availability",
+          "capacity planning",
+          "performance"
+        ],
+        "intentPatterns": [
+          "(define|create|implement|measure).*?(SLO|SLI|SLA|error budget)",
+          "(incident|outage|down|degraded).*?(response|debug|investigate)",
+          "(monitor|alert|observe|track).*?(service|system|metric)",
+          "(chaos|fault).*?(engineering|injection|test)",
+          "(runbook|playbook|procedure).*?(incident|debug)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/monitoring/**/*.yaml",
+          "**/alerts/**/*.yaml",
+          "**/prometheus/**/*",
+          "**/grafana/**/*",
+          "**/runbooks/**/*.md",
+          "**/slo/**/*.yaml",
+          "**/chaos/**/*"
+        ],
+        "contentPatterns": [
+          "kind: (PrometheusRule|ServiceMonitor|Alert)",
+          "expr:",
+          "for: [0-9]+(s|m|h)",
+          "severity: (critical|warning|info)"
+        ]
+      }
+    },
+    "release-engineering": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Release engineering including CI/CD, deployment strategies, versioning, artifact management, and progressive delivery",
+      "promptTriggers": {
+        "keywords": [
+          "CI/CD",
+          "pipeline",
+          "deployment",
+          "release",
+          "deploy",
+          "artifact",
+          "build",
+          "canary",
+          "blue-green",
+          "rolling update",
+          "rollback",
+          "versioning",
+          "semantic version",
+          "feature flag",
+          "progressive delivery",
+          "GitHub Actions",
+          "GitLab CI",
+          "Jenkins",
+          "Flagger",
+          "ArgoCD"
+        ],
+        "intentPatterns": [
+          "(create|setup|configure|implement).*?(pipeline|CI/CD|deployment)",
+          "(deploy|release).*?(application|service|code)",
+          "(rollback|revert).*?(deployment|release)",
+          "(canary|blue-green|rolling).*?(deploy|deployment|release)",
+          "(automate|automation).*?(release|deployment)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/.github/workflows/**/*.yml",
+          "**/.github/workflows/**/*.yaml",
+          "**/.gitlab-ci.yml",
+          "**/Jenkinsfile",
+          "**/azure-pipelines.yml",
+          "**/cloudbuild.yaml",
+          "**/flagger/**/*.yaml",
+          "**/argocd/**/*.yaml"
+        ],
+        "contentPatterns": [
+          "kind: Canary",
+          "kind: Application",
+          "jobs:",
+          "stages:",
+          "pipeline"
+        ]
+      }
+    },
+    "cloud-engineering": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Cloud engineering covering AWS, Azure, GCP, Oracle Cloud (OCI) patterns, cloud-native services, and multi-cloud strategies",
+      "promptTriggers": {
+        "keywords": [
+          "AWS",
+          "Azure",
+          "GCP",
+          "Google Cloud",
+          "cloud",
+          "EC2",
+          "S3",
+          "Lambda",
+          "EKS",
+          "ECS",
+          "RDS",
+          "DynamoDB",
+          "CloudFormation",
+          "ARM template",
+          "Cloud Functions",
+          "Cloud Run",
+          "serverless",
+          "multi-cloud",
+          "cloud migration",
+          "well-architected",
+          "OCI",
+          "Oracle Cloud",
+          "Oracle Cloud Infrastructure",
+          "Autonomous Database",
+          "OKE",
+          "VCN",
+          "Object Storage",
+          "Compute Instance",
+          "Resource Manager",
+          "FastConnect"
+        ],
+        "intentPatterns": [
+          "(AWS|Azure|GCP).*?(setup|configure|deploy|create)",
+          "(migrate|migration).*?(cloud|AWS|Azure|GCP)",
+          "(serverless|lambda).*?(function|deployment)",
+          "(cloud|multi-cloud).*?(architecture|strategy|pattern)",
+          "(OCI|Oracle Cloud).*?(setup|configure|deploy|create)",
+          "(migrate|migration).*?(OCI|Oracle Cloud)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/*cloudformation*.yaml",
+          "**/*cloudformation*.yml",
+          "**/*.bicep",
+          "**/deployment-manager/**/*.yaml"
+        ],
+        "contentPatterns": [
+          "AWSTemplateFormatVersion",
+          "resource \"aws_",
+          "resource \"azurerm_",
+          "resource \"google_",
+          "resource \"oci_"
+        ]
+      }
+    },
+    "systems-engineering": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Systems engineering and administration covering Linux and Windows administration, networking, performance tuning, configuration management (Ansible/Chef/Puppet/DSC), shell scripting (bash/PowerShell), and troubleshooting",
+      "promptTriggers": {
+        "keywords": [
+          "Linux",
+          "Windows",
+          "Windows Server",
+          "system administration",
+          "systemd",
+          "Active Directory",
+          "AD",
+          "GPO",
+          "Group Policy",
+          "PowerShell",
+          "IIS",
+          "networking",
+          "TCP/IP",
+          "DNS",
+          "firewall",
+          "iptables",
+          "performance tuning",
+          "Ansible",
+          "Chef",
+          "Puppet",
+          "DSC",
+          "Desired State Configuration",
+          "shell script",
+          "bash",
+          "configuration management",
+          "troubleshooting",
+          "security hardening"
+        ],
+        "intentPatterns": [
+          "(Linux|Windows|system).*?(admin|administration|configure|setup)",
+          "(Active Directory|AD|GPO).*?(manage|configure|create)",
+          "(PowerShell|bash).*?(script|automation)",
+          "(network|networking).*?(configure|troubleshoot|debug)",
+          "(performance|optimize|tuning).*?(system|server|Linux|Windows)",
+          "(Ansible|Chef|Puppet|DSC).*?(playbook|recipe|manifest|configuration)",
+          "(IIS|web server).*?(configure|setup|manage)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/ansible/**/*.yml",
+          "**/ansible/**/*.yaml",
+          "**/playbooks/**/*.yml",
+          "**/*.sh",
+          "**/*.ps1",
+          "**/chef/**/*.rb",
+          "**/puppet/**/*.pp",
+          "**/scripts/**/*.ps1",
+          "**/powershell/**/*.ps1"
+        ],
+        "contentPatterns": [
+          "- hosts:",
+          "- name:.*tasks:",
+          "#!/bin/bash",
+          "#!/bin/sh",
+          "#Requires -Version",
+          "Get-",
+          "Set-",
+          "New-",
+          "Remove-",
+          "Import-Module"
+        ]
+      }
+    },
+    "network-engineering": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Network engineering covering network design, TCP/IP, load balancing, firewalls, DNS",
+      "promptTriggers": {
+        "keywords": [
+          "network",
+          "networking",
+          "load balancing",
+          "firewall",
+          "DNS",
+          "routing",
+          "switching",
+          "VPN",
+          "HAProxy",
+          "nginx",
+          "iptables",
+          "TCP/IP"
+        ],
+        "intentPatterns": [
+          "(configure|setup|design).*?(network|load balanc|firewall|DNS)",
+          "(debug|troubleshoot).*?(network|connectivity|latency)",
+          "(routing|switching|VPN).*?(configure|setup)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/haproxy.cfg",
+          "**/nginx.conf",
+          "**/network/**/*",
+          "**/firewall/**/*"
+        ],
+        "contentPatterns": [
+          "frontend",
+          "backend",
+          "listen",
+          "bind"
+        ]
+      }
+    },
+    "build-engineering": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Build engineering covering build systems, compilation, dependency management, artifact repositories",
+      "promptTriggers": {
+        "keywords": [
+          "build",
+          "gradle",
+          "maven",
+          "bazel",
+          "make",
+          "compilation",
+          "artifact",
+          "dependency",
+          "monorepo",
+          "build system"
+        ],
+        "intentPatterns": [
+          "(optimize|speed up|improve).*?build",
+          "(gradle|maven|bazel|make).*?(build|compile)",
+          "(monorepo|dependency).*?(manage|setup)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/Makefile",
+          "**/build.gradle",
+          "**/pom.xml",
+          "**/BUILD",
+          "**/WORKSPACE"
+        ],
+        "contentPatterns": [
+          "dependencies \\{",
+          "plugins \\{",
+          "<dependencies>"
+        ]
+      }
+    },
+    "general-it-engineering": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "medium",
+      "description": "General IT engineering covering ITIL, service management, change management, IT governance",
+      "promptTriggers": {
+        "keywords": [
+          "ITIL",
+          "ITSM",
+          "service management",
+          "change management",
+          "incident management",
+          "help desk",
+          "IT governance",
+          "CMDB",
+          "service catalog"
+        ],
+        "intentPatterns": [
+          "(ITIL|ITSM|service).*?(management|process|framework)",
+          "(incident|change|problem).*?(management|process)",
+          "(help desk|service desk).*?(setup|process)"
+        ]
+      }
+    },
+    "infrastructure-architecture": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Infrastructure architecture covering system design patterns, ADRs, multi-region design, disaster recovery, capacity planning, and reference architectures",
+      "promptTriggers": {
+        "keywords": [
+          "architecture",
+          "ADR",
+          "architecture decision",
+          "system design",
+          "multi-region",
+          "disaster recovery",
+          "DR",
+          "RTO",
+          "RPO",
+          "capacity planning",
+          "reference architecture",
+          "architectural pattern",
+          "microservices architecture",
+          "event-driven architecture",
+          "CQRS",
+          "migration architecture"
+        ],
+        "intentPatterns": [
+          "(design|architect|plan).*?(architecture|system|infrastructure)",
+          "(ADR|architecture decision).*?(create|write|document)",
+          "(multi-region|disaster recovery|DR).*?(design|plan|setup)",
+          "(capacity|scaling).*?(plan|estimate|calculate)",
+          "(reference architecture|architectural pattern).*?(example|template)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/docs/architecture/**/*.md",
+          "**/ADR/**/*.md",
+          "**/adr/**/*.md",
+          "**/architecture/**/*.md"
+        ],
+        "contentPatterns": [
+          "# ADR-",
+          "Architecture Decision Record",
+          "## Context",
+          "## Decision",
+          "## Consequences"
+        ]
+      }
+    },
+    "documentation-as-code": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Documentation as code covering technical writing, API documentation, diagrams, documentation sites, and automation",
+      "promptTriggers": {
+        "keywords": [
+          "documentation",
+          "docs",
+          "README",
+          "technical writing",
+          "API documentation",
+          "OpenAPI",
+          "Swagger",
+          "diagram",
+          "PlantUML",
+          "Mermaid",
+          "Docusaurus",
+          "MkDocs",
+          "changelog",
+          "docs site",
+          "documentation automation"
+        ],
+        "intentPatterns": [
+          "(create|write|update).*?(documentation|docs|README)",
+          "(API|endpoint).*?(documentation|document)",
+          "(diagram|architecture diagram).*?(create|generate)",
+          "(docs site|documentation site).*?(setup|build|deploy)",
+          "(technical writing|writing guide).*?(style|best practice)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/README.md",
+          "**/docs/**/*.md",
+          "**/openapi.yaml",
+          "**/swagger.json",
+          "**/*.puml",
+          "**/docusaurus.config.js",
+          "**/mkdocs.yml"
+        ],
+        "contentPatterns": [
+          "```mermaid",
+          "@startuml",
+          "openapi: 3",
+          "# API Documentation"
+        ]
+      }
+    },
+    "observability-engineering": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Observability engineering covering distributed tracing, OpenTelemetry, APM tools, logs aggregation, and correlation strategies",
+      "promptTriggers": {
+        "keywords": [
+          "observability",
+          "distributed tracing",
+          "tracing",
+          "OpenTelemetry",
+          "OTEL",
+          "Jaeger",
+          "Tempo",
+          "Zipkin",
+          "APM",
+          "DataDog",
+          "New Relic",
+          "Dynatrace",
+          "logs aggregation",
+          "ELK",
+          "Loki",
+          "correlation",
+          "trace ID",
+          "span",
+          "structured logging"
+        ],
+        "intentPatterns": [
+          "(distributed tracing|tracing).*?(implement|setup|configure)",
+          "(OpenTelemetry|OTEL).*?(instrumentation|setup|collector)",
+          "(APM|DataDog|New Relic).*?(setup|integrate|configure)",
+          "(logs|logging).*?(aggregation|centralize|correlation)",
+          "(observability|correlation).*?(strategy|implement|setup)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/otel-*.yaml",
+          "**/otel-*.yml",
+          "**/jaeger/**/*",
+          "**/tempo/**/*",
+          "**/loki/**/*",
+          "**/instrumentation.ts",
+          "**/tracing.ts"
+        ],
+        "contentPatterns": [
+          "OpenTelemetry",
+          "tracer.startSpan",
+          "@opentelemetry",
+          "span.setAttribute",
+          "trace.getTracer"
+        ]
+      }
+    },
+    "database-engineering": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Database engineering covering PostgreSQL/MySQL administration, query optimization, indexing, replication, and backup/recovery",
+      "promptTriggers": {
+        "keywords": [
+          "database",
+          "PostgreSQL",
+          "MySQL",
+          "query optimization",
+          "EXPLAIN",
+          "index",
+          "indexing",
+          "database replication",
+          "pg_dump",
+          "backup",
+          "database administration",
+          "database tuning",
+          "slow query"
+        ],
+        "intentPatterns": [
+          "(database|PostgreSQL|MySQL).*?(administration|admin|configure|optimize)",
+          "(query|SQL).*?(optimization|optimize|slow|performance)",
+          "(index|indexing).*?(create|strategy|design)",
+          "(replication|replica).*?(setup|configure|streaming)",
+          "(backup|restore|recovery).*?(database|pg_dump)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/postgresql.conf",
+          "**/my.cnf",
+          "**/*.sql",
+          "**/migrations/**/*.sql",
+          "**/backup*.sh"
+        ],
+        "contentPatterns": [
+          "CREATE INDEX",
+          "EXPLAIN ANALYZE",
+          "pg_dump",
+          "max_connections",
+          "shared_buffers"
+        ]
+      }
+    },
+    "api-engineering": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "API engineering covering REST API design, GraphQL, API gateways, rate limiting, and versioning strategies",
+      "promptTriggers": {
+        "keywords": [
+          "API design",
+          "REST API",
+          "RESTful",
+          "GraphQL",
+          "gRPC",
+          "API gateway",
+          "rate limiting",
+          "API versioning",
+          "API security",
+          "OAuth2",
+          "JWT",
+          "Kong",
+          "Ambassador"
+        ],
+        "intentPatterns": [
+          "(API|REST|GraphQL).*?(design|pattern|best practice)",
+          "(rate limit|throttling).*?(implement|setup|configure)",
+          "(API version|versioning).*?(strategy|implement)",
+          "(API gateway|Kong|Ambassador).*?(setup|configure)",
+          "(GraphQL|schema).*?(design|resolver|N\\+1)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "**/graphql/**/*.ts",
+          "**/*.graphql",
+          "**/schema.graphql",
+          "**/resolvers/**/*.ts",
+          "**/api/**/*gateway*"
+        ],
+        "contentPatterns": [
+          "type Query \\{",
+          "type Mutation \\{",
+          "graphql",
+          "DataLoader",
+          "rate-limit"
+        ]
+      }
     }
+  },
+  "notes": {
+    "enforcement_types": {
+      "suggest": "Skill suggestion appears but doesn't block execution",
+      "block": "Requires skill to be used before proceeding (guardrail)",
+      "warn": "Shows warning but allows proceeding"
+    },
+    "priority_levels": {
+      "critical": "Highest - Always trigger when matched",
+      "high": "Important - Trigger for most matches",
+      "medium": "Moderate - Trigger for clear matches",
+      "low": "Optional - Trigger only for explicit matches"
+    },
+    "customization": {
+      "pathPatterns": "Adjust to match your project structure (blog-api, auth-service, etc.)",
+      "keywords": "Add domain-specific terms relevant to your project",
+      "intentPatterns": "Use regex for flexible user intent matching"
+    }
+  }
 }

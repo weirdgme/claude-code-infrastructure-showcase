@@ -21,7 +21,7 @@ The original project by **diet103** provided the breakthrough patterns and core 
 
 **This fork extends the original with:**
 - 🎯 **14 infrastructure engineering skills** (vs. original 5 development skills)
-- 🎯 **151 total resource files** covering platform, security, SRE, cloud, systems, network, build, architecture, observability, and more
+- 🎯 **152 total resource files** covering platform, security, SRE, cloud (AWS/Azure/GCP/OCI), systems, network, build, architecture, observability, and more
 - 🎯 **Infrastructure focus** while maintaining all original development patterns
 
 **Massive thanks to diet103** for creating the foundation, documenting the patterns, and sharing this invaluable work with the community. This showcase builds directly on their innovation and production-tested insights.
@@ -178,7 +178,7 @@ skill-name/
 │   │   ├── devsecops/                    (11 resource files)
 │   │   ├── sre/                          (11 resource files)
 │   │   ├── release-engineering/          (10 resource files)
-│   │   ├── cloud-engineering/            (10 resource files)
+│   │   ├── cloud-engineering/            (11 resource files)
 │   │   ├── systems-engineering/          (12 resource files)
 │   │   ├── network-engineering/          (10 resource files)
 │   │   ├── build-engineering/            (10 resource files)
@@ -245,7 +245,7 @@ dev/
 | [**devsecops**](.claude/skills/devsecops/) | 11 | Security, compliance | Security automation |
 | [**sre**](.claude/skills/sre/) | 11 | SLO/SLI, observability | Site reliability |
 | [**release-engineering**](.claude/skills/release-engineering/) | 10 | CI/CD, deployments | Release pipelines |
-| [**cloud-engineering**](.claude/skills/cloud-engineering/) | 10 | AWS, Azure, GCP | Cloud architecture |
+| [**cloud-engineering**](.claude/skills/cloud-engineering/) | 11 | AWS, Azure, GCP, OCI | Cloud architecture |
 | [**systems-engineering**](.claude/skills/systems-engineering/) | 12 | Linux/Windows, Ansible/PowerShell, performance tuning | Systems administration, automation |
 | [**network-engineering**](.claude/skills/network-engineering/) | 10 | Network design | Network architecture |
 | [**build-engineering**](.claude/skills/build-engineering/) | 10 | Build systems | Build optimization |
@@ -321,7 +321,7 @@ dev/
 | [**devsecops**](.claude/skills/devsecops/) | 11 | Security scanning, secrets, compliance | Security automation, policy enforcement |
 | [**sre**](.claude/skills/sre/) | 11 | SLO/SLI, observability, incident response | Site reliability, monitoring, on-call |
 | [**release-engineering**](.claude/skills/release-engineering/) | 10 | CI/CD, deployment strategies, versioning | Release pipelines, progressive delivery |
-| [**cloud-engineering**](.claude/skills/cloud-engineering/) | 10 | AWS, Azure, GCP, multi-cloud | Cloud architecture, migration, optimization |
+| [**cloud-engineering**](.claude/skills/cloud-engineering/) | 11 | AWS, Azure, GCP, OCI, multi-cloud | Cloud architecture, migration, optimization |
 | [**systems-engineering**](.claude/skills/systems-engineering/) | 12 | Linux/Windows, Ansible/PowerShell, performance tuning | Systems administration, automation |
 | [**network-engineering**](.claude/skills/network-engineering/) | 10 | Network design, load balancing, security | Network architecture, troubleshooting |
 | [**build-engineering**](.claude/skills/build-engineering/) | 10 | Build systems, Gradle, Maven, Bazel | Build optimization, monorepos |
@@ -378,7 +378,7 @@ dev/
 | **Container Orchestration** | platform-engineering | Kubernetes, Docker, service mesh, helm charts |
 | **Monitoring & Observability** | sre | Prometheus, Grafana, distributed tracing, SLO/SLI, alerting |
 | **Security Automation** | devsecops | SAST/DAST/SCA, secrets management, policy as code, vulnerability scanning |
-| **Cloud Infrastructure** | cloud-engineering | AWS, Azure, GCP services, multi-cloud, serverless, cloud networking |
+| **Cloud Infrastructure** | cloud-engineering | AWS, Azure, GCP, Oracle Cloud (OCI) services, multi-cloud, serverless, cloud networking |
 | **System Administration** | systems-engineering | Linux/Windows, Ansible, PowerShell, configuration management |
 | **Build Systems** | build-engineering | Gradle, Maven, Bazel, build optimization, caching strategies |
 | **Network Design** | network-engineering | Load balancing, SDN, VPN, network security, service mesh networking |
@@ -403,7 +403,7 @@ dev/
 **All 14 infrastructure disciplines are now covered:**
 - ✅ Platform operations (IaC, Kubernetes, GitOps)
 - ✅ CI/CD and release management
-- ✅ Cloud infrastructure (AWS, Azure, GCP)
+- ✅ Cloud infrastructure (AWS, Azure, GCP, Oracle Cloud)
 - ✅ Security automation and compliance
 - ✅ Site reliability and monitoring
 - ✅ Systems administration (Linux & Windows)

@@ -1,19 +1,19 @@
 ---
-description: Cloud engineering guide covering AWS, Azure, GCP services, multi-cloud strategies, serverless architectures, cloud-native patterns, cost optimization, cloud networking, security, migration strategies, and Well-Architected frameworks. Use when designing cloud infrastructure, implementing cloud services, optimizing cloud costs, or planning cloud migrations. (project)
+description: Cloud engineering guide covering AWS, Azure, GCP, and Oracle Cloud (OCI) services, multi-cloud strategies, serverless architectures, cloud-native patterns, cost optimization, cloud networking, security, migration strategies, and Well-Architected frameworks. Use when designing cloud infrastructure, implementing cloud services, optimizing cloud costs, or planning cloud migrations. (project)
 ---
 
 # Cloud Engineering
 
-Comprehensive guide for designing, building, and managing cloud infrastructure across AWS, Azure, and GCP. This skill provides production-tested patterns for cloud-native architectures, multi-cloud strategies, serverless computing, and cloud optimization.
+Comprehensive guide for designing, building, and managing cloud infrastructure across AWS, Azure, GCP, and Oracle Cloud Infrastructure (OCI). This skill provides production-tested patterns for cloud-native architectures, multi-cloud strategies, serverless computing, and cloud optimization.
 
 ## When to Use This Skill
 
 Automatically activates when working on:
-- AWS, Azure, or GCP service selection and implementation
+- AWS, Azure, GCP, or Oracle Cloud (OCI) service selection and implementation
 - Cloud architecture design and cloud-native patterns
 - Multi-cloud and hybrid cloud strategies
-- Serverless application development (Lambda, Cloud Functions, Azure Functions)
-- Cloud networking (VPC, VNet, Cloud VPC)
+- Serverless application development (Lambda, Cloud Functions, Azure Functions, OCI Functions)
+- Cloud networking (VPC, VNet, Cloud VPC, OCI VCN)
 - Cloud cost optimization and FinOps practices
 - Cloud security and IAM configuration
 - Cloud migration planning and execution
@@ -24,11 +24,11 @@ Automatically activates when working on:
 **Purpose:** Enable teams to build robust, scalable cloud infrastructure leveraging the best services from AWS, Azure, and GCP while maintaining portability, cost efficiency, and operational excellence.
 
 **Scope:**
-- Cloud service selection and architecture (AWS, Azure, GCP)
+- Cloud service selection and architecture (AWS, Azure, GCP, OCI)
 - Multi-cloud and hybrid cloud strategies
 - Serverless and event-driven architectures
 - Cloud cost optimization and FinOps
-- Cloud networking (VPC, peering, transit gateway, DNS)
+- Cloud networking (VPC, VNet, VCN, peering, transit gateway, DNS)
 - Cloud security and compliance (IAM, encryption, audit)
 - Migration strategies and modernization
 - Well-Architected frameworks and best practices
@@ -90,20 +90,20 @@ Use Case: Databases, analytics, managed ops
 ### 2. Cloud Provider Comparison
 
 ```
-┌─────────────────┬──────────────────┬──────────────────┬──────────────────┐
-│    Service      │       AWS        │      Azure       │       GCP        │
-├─────────────────┼──────────────────┼──────────────────┼──────────────────┤
-│ Compute         │ EC2              │ Virtual Machines │ Compute Engine   │
-│ Containers      │ ECS, EKS         │ ACI, AKS         │ GKE, Cloud Run   │
-│ Serverless      │ Lambda           │ Functions        │ Cloud Functions  │
-│ Storage         │ S3               │ Blob Storage     │ Cloud Storage    │
-│ Database        │ RDS, DynamoDB    │ SQL, Cosmos DB   │ Cloud SQL, Spanner│
-│ Networking      │ VPC              │ Virtual Network  │ VPC              │
-│ DNS             │ Route 53         │ DNS              │ Cloud DNS        │
-│ CDN             │ CloudFront       │ CDN              │ Cloud CDN        │
-│ IAM             │ IAM              │ Active Directory │ IAM              │
-│ Monitoring      │ CloudWatch       │ Monitor          │ Cloud Monitoring │
-└─────────────────┴──────────────────┴──────────────────┴──────────────────┘
+┌─────────────────┬──────────────────┬──────────────────┬──────────────────┬──────────────────┐
+│    Service      │       AWS        │      Azure       │       GCP        │       OCI        │
+├─────────────────┼──────────────────┼──────────────────┼──────────────────┼──────────────────┤
+│ Compute         │ EC2              │ Virtual Machines │ Compute Engine   │ Compute Instance │
+│ Containers      │ ECS, EKS         │ ACI, AKS         │ GKE, Cloud Run   │ OKE, Instances   │
+│ Serverless      │ Lambda           │ Functions        │ Cloud Functions  │ Functions        │
+│ Storage         │ S3               │ Blob Storage     │ Cloud Storage    │ Object Storage   │
+│ Database        │ RDS, DynamoDB    │ SQL, Cosmos DB   │ Cloud SQL, Spanner│ Autonomous DB   │
+│ Networking      │ VPC              │ Virtual Network  │ VPC              │ VCN              │
+│ DNS             │ Route 53         │ DNS              │ Cloud DNS        │ DNS              │
+│ CDN             │ CloudFront       │ CDN              │ Cloud CDN        │ CDN              │
+│ IAM             │ IAM              │ Active Directory │ IAM              │ IAM              │
+│ Monitoring      │ CloudWatch       │ Monitor          │ Cloud Monitoring │ Monitoring       │
+└─────────────────┴──────────────────┴──────────────────┴──────────────────┴──────────────────┘
 ```
 
 ### 3. Well-Architected Principles
@@ -506,6 +506,7 @@ For detailed guidance on specific topics, see:
 - **[aws-patterns.md](resources/aws-patterns.md)** - Comprehensive AWS services guide (EC2, S3, RDS, Lambda, EKS), Well-Architected Framework, service selection
 - **[azure-patterns.md](resources/azure-patterns.md)** - Azure services guide (VMs, Blob Storage, AKS, Functions), Azure best practices
 - **[gcp-patterns.md](resources/gcp-patterns.md)** - GCP services guide (Compute Engine, Cloud Storage, GKE, Cloud Functions), Google Cloud best practices
+- **[oci-patterns.md](resources/oci-patterns.md)** - Oracle Cloud Infrastructure guide (Compute Instances, Object Storage, Autonomous Database, OKE), OCI best practices
 
 ### Cloud Strategies
 - **[multi-cloud-strategies.md](resources/multi-cloud-strategies.md)** - Multi-cloud vs single cloud, abstraction layers, service selection, trade-offs
@@ -574,6 +575,7 @@ For detailed guidance on specific topics, see:
    - AWS for breadth of services
    - Azure for Microsoft integration
    - GCP for data analytics and ML
+   - OCI for Oracle Database and cost efficiency
    - Hybrid for on-premises integration
 
 3. **Operational Complexity:**
@@ -642,13 +644,13 @@ This skill integrates with:
 ## Triggers and Activation
 
 This skill activates when you:
-- Work with cloud service providers (AWS, Azure, GCP)
+- Work with cloud service providers (AWS, Azure, GCP, OCI)
 - Design cloud-native architectures
 - Implement serverless applications
 - Optimize cloud costs
 - Plan cloud migrations
 - Configure cloud networking or security
-- Use cloud-specific IaC (CloudFormation, ARM templates)
+- Use cloud-specific IaC (CloudFormation, ARM templates, Terraform)
 
 ## Next Steps
 
@@ -662,6 +664,6 @@ For your specific task:
 
 ---
 
-**Total Resources:** 10 detailed guides covering all aspects of cloud engineering
-**Pattern Library:** 100+ production-tested cloud patterns across AWS, Azure, and GCP
+**Total Resources:** 11 detailed guides covering all aspects of cloud engineering
+**Pattern Library:** 125+ production-tested cloud patterns across AWS, Azure, GCP, and OCI
 **Maintained by:** Cloud Engineering team based on real-world production experience
