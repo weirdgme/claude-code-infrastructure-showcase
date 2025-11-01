@@ -242,15 +242,15 @@ dev/
 | Skill | Resources | Purpose | Best For |
 |-------|-----------|---------|----------|
 | [**platform-engineering**](.claude/skills/platform-engineering/) | 11 | IaC, Kubernetes, GitOps | Platform architecture |
-| [**devsecops**](.claude/skills/devsecops/) | 11 | Security, compliance | Security automation |
+| [**devsecops**](.claude/skills/devsecops/) | 13 | Security, compliance, CSPM | Security automation, FedRAMP/CMMC |
 | [**sre**](.claude/skills/sre/) | 11 | SLO/SLI, observability | Site reliability |
 | [**release-engineering**](.claude/skills/release-engineering/) | 10 | CI/CD, deployments | Release pipelines |
-| [**cloud-engineering**](.claude/skills/cloud-engineering/) | 11 | AWS, Azure, GCP, OCI | Cloud architecture |
+| [**cloud-engineering**](.claude/skills/cloud-engineering/) | 13 | AWS, Azure, GCP, OCI, GovCloud | Cloud architecture, cleared environments |
 | [**systems-engineering**](.claude/skills/systems-engineering/) | 12 | Linux/Windows, Ansible/PowerShell, performance tuning | Systems administration, automation |
 | [**network-engineering**](.claude/skills/network-engineering/) | 10 | Network design | Network architecture |
 | [**build-engineering**](.claude/skills/build-engineering/) | 10 | Build systems | Build optimization |
 | [**general-it-engineering**](.claude/skills/general-it-engineering/) | 10 | ITIL, ITSM | IT operations |
-| [**infrastructure-architecture**](.claude/skills/infrastructure-architecture/) | 11 | System design, ADRs, multi-region, DR | Architecture patterns, capacity planning |
+| [**infrastructure-architecture**](.claude/skills/infrastructure-architecture/) | 13 | System design, ADRs, workload classification | Architecture patterns, cleared environments |
 | [**documentation-as-code**](.claude/skills/documentation-as-code/) | 10 | Technical writing, API docs, diagrams | Documentation automation |
 | [**observability-engineering**](.claude/skills/observability-engineering/) | 6 | Distributed tracing, OpenTelemetry, APM | Observability, monitoring |
 | [**database-engineering**](.claude/skills/database-engineering/) | 4 | PostgreSQL, query optimization | Database administration |
@@ -318,15 +318,15 @@ dev/
 | Skill | Resources | Coverage | Best For |
 |-------|-----------|----------|----------|
 | [**platform-engineering**](.claude/skills/platform-engineering/) | 11 | IaC, Kubernetes, GitOps, Service Mesh | Platform architecture, container orchestration |
-| [**devsecops**](.claude/skills/devsecops/) | 11 | Security scanning, secrets, compliance | Security automation, policy enforcement |
+| [**devsecops**](.claude/skills/devsecops/) | 13 | Security scanning, secrets, compliance frameworks (FedRAMP, CMMC, NIST, ITAR, PCI-DSS, HIPAA), CSPM integration | Security automation, policy enforcement, audit preparation |
 | [**sre**](.claude/skills/sre/) | 11 | SLO/SLI, observability, incident response | Site reliability, monitoring, on-call |
 | [**release-engineering**](.claude/skills/release-engineering/) | 10 | CI/CD, deployment strategies, versioning | Release pipelines, progressive delivery |
-| [**cloud-engineering**](.claude/skills/cloud-engineering/) | 11 | AWS, Azure, GCP, OCI, multi-cloud | Cloud architecture, migration, optimization |
+| [**cloud-engineering**](.claude/skills/cloud-engineering/) | 13 | AWS, Azure, GCP, OCI, multi-cloud, government clouds (GovCloud, Azure Gov), CSPM tools (Prisma Cloud, Wiz, Aqua, Trend Micro) | Cloud architecture, migration, cleared environments |
 | [**systems-engineering**](.claude/skills/systems-engineering/) | 12 | Linux/Windows, Ansible/PowerShell, performance tuning | Systems administration, automation |
 | [**network-engineering**](.claude/skills/network-engineering/) | 10 | Network design, load balancing, security | Network architecture, troubleshooting |
 | [**build-engineering**](.claude/skills/build-engineering/) | 10 | Build systems, Gradle, Maven, Bazel | Build optimization, monorepos |
 | [**general-it-engineering**](.claude/skills/general-it-engineering/) | 10 | ITIL, ITSM, change management, governance | IT operations, service management |
-| [**infrastructure-architecture**](.claude/skills/infrastructure-architecture/) | 11 | System design, ADRs, multi-region, DR, capacity planning | Architecture patterns, design decisions |
+| [**infrastructure-architecture**](.claude/skills/infrastructure-architecture/) | 13 | System design, ADRs, multi-region, DR, capacity planning, workload classification (CUI, Secret, TS/SCI, ITAR), cleared environment architectures | Architecture patterns, design decisions, classified systems |
 | [**documentation-as-code**](.claude/skills/documentation-as-code/) | 10 | Technical writing, API docs, OpenAPI, diagrams, automation | Documentation workflows, standards |
 | [**observability-engineering**](.claude/skills/observability-engineering/) | 6 | Distributed tracing, OpenTelemetry, APM, logs | Observability, performance monitoring |
 | [**database-engineering**](.claude/skills/database-engineering/) | 4 | PostgreSQL/MySQL, query optimization, replication | Database administration, performance |

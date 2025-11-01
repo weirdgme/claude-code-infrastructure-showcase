@@ -20,6 +20,12 @@ Skills are modular knowledge bases that Claude loads when needed. They provide:
 
 ## Available Skills
 
+### Development Skills (5)
+
+Development-focused skills for application code, testing, and error tracking.
+
+---
+
 ### skill-developer (Meta-Skill)
 **Purpose:** Creating and managing Claude Code skills
 
@@ -162,6 +168,127 @@ Skills are modular knowledge bases that Claude loads when needed. They provide:
 **Customization:** ⚠️ Update `pathPatterns` for your backend
 
 **[View Skill →](error-tracking/)**
+
+---
+
+### Infrastructure Skills (14)
+
+Production-ready infrastructure engineering skills covering platform, security, SRE, cloud, systems, network, build, and more.
+
+---
+
+### cloud-engineering
+**Purpose:** Cloud architecture and multi-cloud infrastructure patterns
+
+**Files:** 13 resource files
+
+**Covers:**
+- AWS, Azure, GCP, Oracle Cloud (OCI) services
+- Multi-cloud and hybrid cloud strategies
+- **Government cloud regions (AWS GovCloud, Azure Government, GCP Gov, OCI Gov)**
+- **Air-gapped deployments and classified environments**
+- **CSPM tools (Trend Micro Cloud One, Prisma Cloud, Wiz, Aqua Security)**
+- Cloud networking, security, and cost optimization
+- Serverless architectures
+
+**New Resources:**
+- **cleared-cloud-environments.md** - Government clouds, FedRAMP, DoD IL5/IL6, air-gapped patterns, on-premises classified networks
+- **cloud-security-tools.md** - Complete CSPM tool coverage, native cloud security, tool comparison matrix
+
+**Use when:**
+- Designing cloud infrastructure
+- Implementing FedRAMP or CMMC compliance
+- Deploying to government cloud regions
+- Setting up CSPM scanning
+- Migrating to cloud or between cloud providers
+
+**Customization:** ⚠️ Update `pathPatterns` for infrastructure code
+
+**[View Skill →](cloud-engineering/)**
+
+---
+
+### devsecops
+**Purpose:** Security automation, compliance frameworks, and DevSecOps practices
+
+**Files:** 13 resource files
+
+**Covers:**
+- Security scanning (SAST, DAST, SCA)
+- Container security and vulnerability scanning
+- Secrets management and policy as code
+- **Compliance frameworks (FedRAMP, CMMC, NIST 800-53/800-171, ITAR, CJIS, PCI-DSS, HIPAA, SOC 2)**
+- **Implementation checklists and audit preparation**
+- **CSPM integration in CI/CD pipelines**
+- Shift-left security patterns
+- Automated compliance monitoring
+
+**New Resources:**
+- **compliance-frameworks.md** - Complete compliance framework guide (FedRAMP Low/Moderate/High, CMMC Levels 1-3, NIST controls, ITAR, healthcare, financial services)
+- **cspm-integration.md** - CSPM tool integration (GitHub Actions, GitLab CI, Jenkins), policy as code, automated remediation
+
+**Use when:**
+- Implementing compliance requirements
+- Setting up security scanning pipelines
+- Preparing for FedRAMP/CMMC audits
+- Integrating CSPM tools (Prisma Cloud, Wiz, Aqua)
+- Policy as code implementation
+
+**Customization:** ⚠️ Update for your compliance requirements
+
+**[View Skill →](devsecops/)**
+
+---
+
+### infrastructure-architecture
+**Purpose:** System design patterns, architecture decisions, and design documentation
+
+**Files:** 13 resource files
+
+**Covers:**
+- System design patterns and anti-patterns
+- Architecture Decision Records (ADRs)
+- Multi-region and disaster recovery architectures
+- Capacity planning and performance modeling
+- **Workload classification (Unclassified, CUI, Secret, TS/SCI, ITAR)**
+- **Cleared environment architectures**
+- **Security zones and cross-domain solutions**
+- High availability and fault tolerance patterns
+
+**New Resources:**
+- **workload-classification.md** - Data classification levels, separation patterns, access control, Kubernetes namespace isolation
+- **cleared-environment-architecture.md** - Reference architectures for Secret, TS/SCI, CUI environments, air-gapped patterns, SCIF requirements
+
+**Use when:**
+- Designing system architectures
+- Making architectural decisions
+- Planning classified/cleared environments
+- Implementing data classification
+- Designing for compliance and security zones
+
+**Customization:** ⚠️ Adapt classification levels to your requirements
+
+**[View Skill →](infrastructure-architecture/)**
+
+---
+
+### Other Infrastructure Skills
+
+Additional infrastructure skills available (11 more):
+
+- **platform-engineering** - IaC, Kubernetes, GitOps, service mesh (11 resources)
+- **sre** - SLO/SLI, observability, incident response (11 resources)
+- **release-engineering** - CI/CD, deployment strategies, versioning (10 resources)
+- **systems-engineering** - Linux/Windows, Ansible/PowerShell (12 resources)
+- **network-engineering** - Network design, load balancing, security (10 resources)
+- **build-engineering** - Build systems, Gradle, Maven, Bazel (10 resources)
+- **general-it-engineering** - ITIL, ITSM, change management (10 resources)
+- **documentation-as-code** - Technical writing, API docs, diagrams (10 resources)
+- **observability-engineering** - Distributed tracing, OpenTelemetry (6 resources)
+- **database-engineering** - PostgreSQL/MySQL, query optimization (4 resources)
+- **api-engineering** - REST, GraphQL, API gateways (4 resources)
+
+See main [README.md](../../README.md) for detailed infrastructure skill descriptions.
 
 ---
 
