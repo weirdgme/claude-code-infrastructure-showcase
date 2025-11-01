@@ -338,7 +338,12 @@
           "audit preparation",
           "infrastructure",
           "patient",
-          "health information"
+          "health information",
+          "compliant",
+          "become compliant",
+          "sensitive",
+          "sensitive data",
+          "data protection"
         ],
         "intentPatterns": [
           "(scan|check|find|detect).*?(vulnerability|security|secret|credential)",
@@ -539,7 +544,9 @@
           "Security Hub",
           "Microsoft Defender",
           "Kubernetes",
-          "K8s"
+          "K8s",
+          "secure environment",
+          "deployment"
         ],
         "intentPatterns": [
           "(AWS|Azure|GCP).*?(setup|configure|deploy|create)",
@@ -782,7 +789,12 @@
           "SCIF",
           "cross-domain solution",
           "security zone",
-          "compartmented"
+          "compartmented",
+          "architect",
+          "sensitive data",
+          "data handling",
+          "handling data",
+          "classification"
         ],
         "intentPatterns": [
           "(design|architect|plan).*?(architecture|system|infrastructure)",
