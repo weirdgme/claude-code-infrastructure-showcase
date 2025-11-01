@@ -6,6 +6,19 @@ description: Build engineering covering build systems (Make, Gradle, Maven, Baze
 
 Comprehensive guide for build engineering covering build systems, compilation optimization, dependency management, artifact repositories, reproducible builds, and modern build practices for creating fast, reliable, and secure build pipelines.
 
+## When to Use This Skill
+
+Automatically activates when working on:
+- Build system configuration (Gradle, Maven, Bazel, Make)
+- Build performance optimization and caching strategies
+- Dependency management and version resolution
+- Artifact repository setup (Artifactory, Nexus)
+- Reproducible builds and hermetic building
+- Monorepo build strategies
+- CI/CD pipeline build optimization
+- Build supply chain security
+- Distributed and parallel builds
+
 ## Overview
 
 **Purpose:** Enable teams to create efficient, reliable, and secure build processes that scale from small projects to large monorepos while maintaining build reproducibility and optimizing developer productivity.

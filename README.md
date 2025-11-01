@@ -65,6 +65,39 @@ Browse the [skills catalog](.claude/skills/) and copy what you need.
 
 ---
 
+## Platform Compatibility
+
+### ✅ Fully Supported
+
+**Linux & macOS:**
+- All hooks work natively
+- All skills, agents, and commands function perfectly
+- No additional setup required
+
+**Windows Subsystem for Linux (WSL):**
+- ⭐ **Recommended for Windows users**
+- All hooks work through bash
+- Full functionality available
+- [Install WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+### ⚠️ Partial Support
+
+**Windows (Native PowerShell/CMD):**
+- ❌ Bash hooks will not work natively (`.sh` files)
+- ✅ Skills, agents, and commands work fine
+- ✅ systems-engineering skill includes Windows Server & PowerShell coverage
+- 💡 **Workaround:** Use WSL or create PowerShell hook equivalents
+
+**Infrastructure Skills Windows Coverage:**
+The `systems-engineering` skill provides comprehensive Windows administration guidance:
+- Windows Server administration
+- PowerShell scripting & DSC
+- Active Directory & Group Policy
+- IIS, Registry, WSUS configuration
+- See [systems-engineering resources](.claude/skills/systems-engineering/resources/)
+
+---
+
 ## What Makes This Different?
 
 ### The Auto-Activation Breakthrough

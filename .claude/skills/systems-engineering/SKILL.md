@@ -6,6 +6,19 @@ description: Systems engineering and administration covering Linux and Windows a
 
 Comprehensive guide for Linux and Windows system administration, networking, performance optimization, configuration management, and operational automation. This skill provides production-tested patterns for managing infrastructure at scale across both platforms.
 
+## When to Use This Skill
+
+Automatically activates when working on:
+- Linux or Windows Server administration and configuration
+- System performance tuning and optimization
+- Configuration management (Ansible, Chef, Puppet, DSC)
+- Shell scripting automation (bash, PowerShell)
+- System monitoring and observability setup
+- Security hardening and compliance
+- Storage management and backup strategies
+- Active Directory and Group Policy (Windows)
+- System troubleshooting and debugging
+
 ## Overview
 
 **Purpose:** Enable teams to build, configure, and maintain robust infrastructure with automation, monitoring, and performance optimization on both Linux and Windows platforms.

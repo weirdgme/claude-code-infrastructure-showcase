@@ -6,6 +6,20 @@ description: Network engineering and architecture covering network design, TCP/I
 
 Comprehensive guide for network engineering covering network architecture, protocols, routing, load balancing, security, and modern networking technologies for building reliable and scalable network infrastructure.
 
+## When to Use This Skill
+
+Automatically activates when working on:
+- Network architecture design and topology planning
+- TCP/IP protocol configuration and troubleshooting
+- Routing and switching configuration
+- Load balancing strategies and implementation
+- Network security and firewall configuration
+- DNS management and resolution
+- VPN setup and connectivity
+- SDN (Software-Defined Networking) implementation
+- Service mesh networking (Istio, Linkerd)
+- Network performance optimization and troubleshooting
+
 ## Overview
 
 **Purpose:** Enable teams to design, implement, and maintain robust network infrastructure from traditional networking to modern cloud-native and service mesh architectures.
