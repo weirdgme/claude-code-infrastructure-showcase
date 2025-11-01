@@ -261,7 +261,17 @@
           "sandboxing",
           "sandbox",
           "developer productivity",
-          "developer experience"
+          "developer experience",
+          "IoT",
+          "Internet of Things",
+          "fleet management",
+          "OTA",
+          "over-the-air",
+          "job scheduling",
+          "research computing",
+          "HPC",
+          "high-performance computing",
+          "cluster"
         ],
         "intentPatterns": [
           "(create|setup|implement|configure).*?(infrastructure|platform|kubernetes|terraform)",
@@ -378,7 +388,11 @@
           "cryptography",
           "supply chain",
           "provenance",
-          "transparency"
+          "transparency",
+          "PII",
+          "personally identifiable information",
+          "benefits processing",
+          "benefits"
         ],
         "intentPatterns": [
           "(scan|check|find|detect).*?(vulnerability|security|secret|credential)",
@@ -593,7 +607,13 @@
           "confidential computing",
           "enclaves",
           "SGX",
-          "secure enclave"
+          "secure enclave",
+          "citizen portal",
+          "portal",
+          "SSO",
+          "single sign-on",
+          "state government",
+          "government portal"
         ],
         "intentPatterns": [
           "(AWS|Azure|GCP).*?(setup|configure|deploy|create)",
@@ -896,7 +916,27 @@
           "data residency",
           "residency requirements",
           "developer productivity",
-          "developer experience"
+          "developer experience",
+          "telemetry",
+          "vehicle",
+          "connected vehicle",
+          "automotive",
+          "geofencing",
+          "trading platform",
+          "trading",
+          "learning management",
+          "LMS",
+          "e-learning",
+          "multiplayer",
+          "game backend",
+          "gaming",
+          "matchmaking",
+          "esports",
+          "tournament",
+          "tax filing",
+          "tax",
+          "public records",
+          "records management"
         ],
         "intentPatterns": [
           "(design|architect|plan).*?(architecture|system|infrastructure)",
@@ -1004,7 +1044,10 @@
           "error tracking",
           "analytics",
           "engagement",
-          "viewer"
+          "viewer",
+          "predictive maintenance",
+          "smart factory",
+          "factory"
         ],
         "intentPatterns": [
           "(distributed tracing|tracing).*?(implement|setup|configure)",
