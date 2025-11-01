@@ -516,6 +516,8 @@ For detailed guidance on specific topics, see:
 ### Networking & Security
 - **[cloud-networking.md](resources/cloud-networking.md)** - VPC design, peering, transit gateway, private link, DNS, CDN configuration
 - **[cloud-security.md](resources/cloud-security.md)** - IAM best practices, encryption (KMS), compliance (HIPAA, PCI-DSS), security controls
+- **[cleared-cloud-environments.md](resources/cleared-cloud-environments.md)** - Government cloud regions (AWS GovCloud, Azure Government, GCP Gov, OCI Gov), air-gapped deployments, FedRAMP, CMMC, classified environments
+- **[cloud-security-tools.md](resources/cloud-security-tools.md)** - CSPM tools (Trend Micro Cloud One, Prisma Cloud, Wiz, Aqua), native cloud security (Security Hub, Defender, SCC), tool comparison
 
 ### Architecture Patterns
 - **[well-architected-frameworks.md](resources/well-architected-frameworks.md)** - AWS/Azure/GCP Well-Architected pillars, design principles, review process

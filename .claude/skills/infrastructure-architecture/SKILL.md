@@ -212,6 +212,8 @@ For detailed guidance on specific topics, see:
 ### Data & Security
 - **[data-architecture.md](resources/data-architecture.md)** - Data flow, storage selection, caching strategies, CDC, event sourcing
 - **[security-architecture.md](resources/security-architecture.md)** - Zero trust, defense in depth, threat modeling, secure by design
+- **[workload-classification.md](resources/workload-classification.md)** - Data classification levels (Unclassified, CUI, Secret, TS/SCI, ITAR), classification criteria, separation patterns, access control
+- **[cleared-environment-architecture.md](resources/cleared-environment-architecture.md)** - Classified environment architectures (Secret, TS/SCI, CUI), security zones, cross-domain solutions, air-gapped patterns, SCIF requirements
 
 ### Cost & Migration
 - **[cost-architecture.md](resources/cost-architecture.md)** - Cost-aware design, TCO analysis, FinOps integration

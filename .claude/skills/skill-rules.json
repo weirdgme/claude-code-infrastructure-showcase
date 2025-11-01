@@ -288,7 +288,7 @@
       "type": "domain",
       "enforcement": "suggest",
       "priority": "high",
-      "description": "DevSecOps practices including security scanning, container security, secrets management, and policy enforcement",
+      "description": "DevSecOps practices including security scanning, container security, secrets management, policy enforcement, compliance frameworks, and CSPM integration",
       "promptTriggers": {
         "keywords": [
           "security",
@@ -313,13 +313,35 @@
           "kyverno",
           "compliance",
           "policy enforcement",
-          "pod security"
+          "pod security",
+          "FedRAMP",
+          "CMMC",
+          "NIST 800-53",
+          "NIST 800-171",
+          "ITAR",
+          "CJIS",
+          "PCI-DSS",
+          "HIPAA",
+          "SOC 2",
+          "compliance framework",
+          "CSPM",
+          "Prisma Cloud",
+          "Wiz",
+          "Aqua Security",
+          "Trend Micro",
+          "shift-left",
+          "policy as code",
+          "CI/CD security",
+          "audit preparation"
         ],
         "intentPatterns": [
           "(scan|check|find|detect).*?(vulnerability|security|secret|credential)",
           "(implement|add|setup|configure).*?(security|scanning|secrets|vault)",
           "(policy|compliance|enforce).*?(security|standard|baseline)",
-          "(harden|secure).*?(container|image|pod|cluster)"
+          "(harden|secure).*?(container|image|pod|cluster)",
+          "(FedRAMP|CMMC|NIST|compliance).*?(framework|requirement|control)",
+          "(CSPM|cloud security posture).*?(tool|integration|scan)",
+          "(compliance|audit).*?(checklist|preparation|evidence)"
         ]
       },
       "fileTriggers": {
@@ -460,7 +482,7 @@
       "type": "domain",
       "enforcement": "suggest",
       "priority": "high",
-      "description": "Cloud engineering covering AWS, Azure, GCP, Oracle Cloud (OCI) patterns, cloud-native services, and multi-cloud strategies",
+      "description": "Cloud engineering covering AWS, Azure, GCP, Oracle Cloud (OCI) patterns, cloud-native services, multi-cloud strategies, government clouds, and compliance",
       "promptTriggers": {
         "keywords": [
           "AWS",
@@ -492,7 +514,24 @@
           "Object Storage",
           "Compute Instance",
           "Resource Manager",
-          "FastConnect"
+          "FastConnect",
+          "GovCloud",
+          "Azure Government",
+          "government cloud",
+          "FedRAMP",
+          "cleared",
+          "classified",
+          "air-gapped",
+          "DoD",
+          "IL5",
+          "IL6",
+          "CSPM",
+          "Prisma Cloud",
+          "Wiz",
+          "Aqua",
+          "Trend Micro",
+          "Security Hub",
+          "Microsoft Defender"
         ],
         "intentPatterns": [
           "(AWS|Azure|GCP).*?(setup|configure|deploy|create)",
@@ -500,7 +539,10 @@
           "(serverless|lambda).*?(function|deployment)",
           "(cloud|multi-cloud).*?(architecture|strategy|pattern)",
           "(OCI|Oracle Cloud).*?(setup|configure|deploy|create)",
-          "(migrate|migration).*?(OCI|Oracle Cloud)"
+          "(migrate|migration).*?(OCI|Oracle Cloud)",
+          "(GovCloud|government cloud|cleared).*?(deploy|setup|configure|migrate)",
+          "(FedRAMP|CMMC|DoD).*?(compliance|cloud)",
+          "(CSPM|cloud security).*?(tool|scan|posture)"
         ]
       },
       "fileTriggers": {
@@ -698,7 +740,7 @@
       "type": "domain",
       "enforcement": "suggest",
       "priority": "high",
-      "description": "Infrastructure architecture covering system design patterns, ADRs, multi-region design, disaster recovery, capacity planning, and reference architectures",
+      "description": "Infrastructure architecture covering system design patterns, ADRs, multi-region design, disaster recovery, capacity planning, reference architectures, workload classification, and cleared environments",
       "promptTriggers": {
         "keywords": [
           "architecture",
@@ -716,14 +758,33 @@
           "microservices architecture",
           "event-driven architecture",
           "CQRS",
-          "migration architecture"
+          "migration architecture",
+          "workload classification",
+          "data classification",
+          "CUI",
+          "Controlled Unclassified Information",
+          "Secret",
+          "Top Secret",
+          "TS/SCI",
+          "ITAR",
+          "classification level",
+          "cleared environment",
+          "classified environment",
+          "air-gapped",
+          "SCIF",
+          "cross-domain solution",
+          "security zone",
+          "compartmented"
         ],
         "intentPatterns": [
           "(design|architect|plan).*?(architecture|system|infrastructure)",
           "(ADR|architecture decision).*?(create|write|document)",
           "(multi-region|disaster recovery|DR).*?(design|plan|setup)",
           "(capacity|scaling).*?(plan|estimate|calculate)",
-          "(reference architecture|architectural pattern).*?(example|template)"
+          "(reference architecture|architectural pattern).*?(example|template)",
+          "(classify|classification).*?(workload|data|system)",
+          "(cleared|classified|air-gapped).*?(environment|architecture|design)",
+          "(CUI|Secret|TS/SCI|ITAR).*?(workload|system|architecture)"
         ]
       },
       "fileTriggers": {

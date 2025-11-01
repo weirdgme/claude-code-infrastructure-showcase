@@ -250,6 +250,8 @@ For detailed guidance on specific topics, see:
 ### Policy & Compliance
 - **[policy-enforcement.md](resources/policy-enforcement.md)** - OPA, Gatekeeper, Kyverno, admission controllers, policy testing
 - **[compliance-automation.md](resources/compliance-automation.md)** - Compliance frameworks (SOC2, PCI-DSS, HIPAA), automated audits
+- **[compliance-frameworks.md](resources/compliance-frameworks.md)** - FedRAMP, CMMC, NIST 800-53/800-171, ITAR, CJIS, PCI-DSS, HIPAA, SOC 2, implementation checklists, audit preparation
+- **[cspm-integration.md](resources/cspm-integration.md)** - CSPM tool integration (Prisma Cloud, Wiz, Aqua, Trend Micro), CI/CD pipeline security scanning, policy as code, shift-left security
 
 ### CI/CD & Monitoring
 - **[ci-cd-security.md](resources/ci-cd-security.md)** - Secure pipeline design, build security, deployment security, supply chain protection
