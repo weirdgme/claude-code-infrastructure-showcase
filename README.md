@@ -20,8 +20,8 @@ The original project by **diet103** provided the breakthrough patterns and core 
 - ✨ **Real-world validation** - 6 months of production use
 
 **This fork extends the original with:**
-- 🎯 **14 infrastructure engineering skills** (vs. original 5 development skills)
-- 🎯 **152 total resource files** covering platform, security, SRE, cloud (AWS/Azure/GCP/OCI), systems, network, build, architecture, observability, and more
+- 🎯 **15 infrastructure engineering skills** (vs. original 5 development skills)
+- 🎯 **155 total resource files** covering platform, security, SRE, cloud (AWS/Azure/GCP/OCI), cybersecurity, systems, network, build, architecture, observability, and more
 - 🎯 **Infrastructure focus** while maintaining all original development patterns
 
 **Massive thanks to diet103** for creating the foundation, documenting the patterns, and sharing this invaluable work with the community. This showcase builds directly on their innovation and production-tested insights.
@@ -166,16 +166,17 @@ skill-name/
 
 ```
 .claude/
-├── skills/                 # 19 production skills
+├── skills/                 # 20 production skills
 │   ├── Development (5):
 │   │   ├── backend-dev-guidelines/  (11 resource files)
 │   │   ├── frontend-dev-guidelines/ (10 resource files)
 │   │   ├── skill-developer/         (7 resource files)
 │   │   ├── route-tester/
 │   │   └── error-tracking/
-│   ├── Infrastructure (14):
+│   ├── Infrastructure (15):
 │   │   ├── platform-engineering/          (11 resource files)
 │   │   ├── devsecops/                    (11 resource files)
+│   │   ├── cybersecurity/                (3 resource files)
 │   │   ├── sre/                          (11 resource files)
 │   │   ├── release-engineering/          (10 resource files)
 │   │   ├── cloud-engineering/            (11 resource files)
@@ -225,7 +226,7 @@ dev/
 
 ## Component Catalog
 
-### 🎨 Skills (19 Total)
+### 🎨 Skills (20 Total)
 
 **Development Skills (5):**
 
@@ -237,12 +238,13 @@ dev/
 | [**route-tester**](.claude/skills/route-tester/) | 389 | Testing authenticated routes | API testing |
 | [**error-tracking**](.claude/skills/error-tracking/) | ~250 | Sentry integration | Error monitoring |
 
-**Infrastructure Skills (14):**
+**Infrastructure Skills (15):**
 
 | Skill | Resources | Purpose | Best For |
 |-------|-----------|---------|----------|
 | [**platform-engineering**](.claude/skills/platform-engineering/) | 11 | IaC, Kubernetes, GitOps | Platform architecture |
 | [**devsecops**](.claude/skills/devsecops/) | 13 | Security, compliance, CSPM | Security automation, FedRAMP/CMMC |
+| [**cybersecurity**](.claude/skills/cybersecurity/) | 3 | Threat modeling, SecOps, incident response, AppSec, pen testing | Security architecture, SIEM/SOC, breach response |
 | [**sre**](.claude/skills/sre/) | 11 | SLO/SLI, observability | Site reliability |
 | [**release-engineering**](.claude/skills/release-engineering/) | 10 | CI/CD, deployments | Release pipelines |
 | [**cloud-engineering**](.claude/skills/cloud-engineering/) | 13 | AWS, Azure, GCP, OCI, GovCloud | Cloud architecture, cleared environments |
@@ -311,7 +313,7 @@ dev/
 
 **👉 [How agents work →](.claude/agents/README.md)**
 
-### 🏗️ Infrastructure Skills (14)
+### 🏗️ Infrastructure Skills (15)
 
 **Production-ready infrastructure engineering skills:**
 
@@ -319,6 +321,7 @@ dev/
 |-------|-----------|----------|----------|
 | [**platform-engineering**](.claude/skills/platform-engineering/) | 11 | IaC, Kubernetes, GitOps, Service Mesh | Platform architecture, container orchestration |
 | [**devsecops**](.claude/skills/devsecops/) | 13 | Security scanning, secrets, compliance frameworks (FedRAMP, CMMC, NIST, ITAR, PCI-DSS, HIPAA), CSPM integration | Security automation, policy enforcement, audit preparation |
+| [**cybersecurity**](.claude/skills/cybersecurity/) | 3 | Threat modeling (STRIDE, PASTA, DREAD), security operations (SOC, SIEM, SOAR, EDR/XDR), incident response, AppSec (OWASP, SAST, DAST), pen testing, network security, IAM, cryptography, cloud security, Zero Trust | Security architecture, threat hunting, breach response, vulnerability management |
 | [**sre**](.claude/skills/sre/) | 11 | SLO/SLI, observability, incident response | Site reliability, monitoring, on-call |
 | [**release-engineering**](.claude/skills/release-engineering/) | 10 | CI/CD, deployment strategies, versioning | Release pipelines, progressive delivery |
 | [**cloud-engineering**](.claude/skills/cloud-engineering/) | 13 | AWS, Azure, GCP, OCI, multi-cloud, government clouds (GovCloud, Azure Gov), CSPM tools (Prisma Cloud, Wiz, Aqua, Trend Micro) | Cloud architecture, migration, cleared environments |
@@ -378,6 +381,7 @@ dev/
 | **Container Orchestration** | platform-engineering | Kubernetes, Docker, service mesh, helm charts |
 | **Monitoring & Observability** | sre | Prometheus, Grafana, distributed tracing, SLO/SLI, alerting |
 | **Security Automation** | devsecops | SAST/DAST/SCA, secrets management, policy as code, vulnerability scanning |
+| **Cybersecurity** | cybersecurity | Threat modeling, SOC/SIEM/SOAR, incident response, AppSec, pen testing, Zero Trust |
 | **Cloud Infrastructure** | cloud-engineering | AWS, Azure, GCP, Oracle Cloud (OCI) services, multi-cloud, serverless, cloud networking |
 | **System Administration** | systems-engineering | Linux/Windows, Ansible, PowerShell, configuration management |
 | **Build Systems** | build-engineering | Gradle, Maven, Bazel, build optimization, caching strategies |
@@ -400,11 +404,12 @@ dev/
 
 ### Complete Infrastructure Coverage
 
-**All 14 infrastructure disciplines are now covered:**
+**All 15 infrastructure disciplines are now covered:**
 - ✅ Platform operations (IaC, Kubernetes, GitOps)
 - ✅ CI/CD and release management
 - ✅ Cloud infrastructure (AWS, Azure, GCP, Oracle Cloud)
 - ✅ Security automation and compliance
+- ✅ Cybersecurity (threat modeling, SecOps, incident response, AppSec, pen testing)
 - ✅ Site reliability and monitoring
 - ✅ Systems administration (Linux & Windows)
 - ✅ Network engineering and architecture
