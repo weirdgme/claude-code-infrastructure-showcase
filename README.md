@@ -8,6 +8,28 @@ Born from 6 months of real-world use managing a complex TypeScript microservices
 
 ---
 
+## 🙏 Acknowledgements
+
+**This repository is built upon the foundational work of [diet103's Claude Code Infrastructure Showcase](https://github.com/diet103/claude-code-infrastructure-showcase).**
+
+The original project by **diet103** provided the breakthrough patterns and core infrastructure that made this expansion possible:
+- ✨ **Auto-activation system** - The hook-based skill activation mechanism
+- ✨ **Modular skill pattern** - The 500-line rule and progressive disclosure approach
+- ✨ **Development skills** - Backend and frontend development guidelines
+- ✨ **Agent patterns** - Specialized agent architecture
+- ✨ **Real-world validation** - 6 months of production use
+
+**This fork extends the original with:**
+- 🎯 **14 infrastructure engineering skills** (vs. original 5 development skills)
+- 🎯 **151 total resource files** covering platform, security, SRE, cloud, systems, network, build, architecture, observability, and more
+- 🎯 **Infrastructure focus** while maintaining all original development patterns
+
+**Massive thanks to diet103** for creating the foundation, documenting the patterns, and sharing this invaluable work with the community. This showcase builds directly on their innovation and production-tested insights.
+
+**Original repository:** https://github.com/diet103/claude-code-infrastructure-showcase
+
+---
+
 ## What's Inside
 
 **Production-tested infrastructure for:**
@@ -513,13 +535,15 @@ When helping users integrate:
 
 **Found this useful?**
 
-- ⭐ Star this repo
+- ⭐ Star this repo (and the [original by diet103](https://github.com/diet103/claude-code-infrastructure-showcase))
 - 🐛 Report issues or suggest improvements
 - 💬 Share your own skills/hooks/agents
 - 📝 Contribute examples from your domain
 
 **Background:**
-This infrastructure was detailed in a post I made to Reddit ["Claude Code is a Beast – Tips from 6 Months of Hardcore Use"](https://www.reddit.com/r/ClaudeAI/comments/1oivjvm/claude_code_is_a_beast_tips_from_6_months_of/). After hundreds of requests, this showcase was created to help the community implement these patterns.
+The foundational infrastructure patterns were created by **[diet103](https://github.com/diet103)** and detailed in their Reddit post ["Claude Code is a Beast – Tips from 6 Months of Hardcore Use"](https://www.reddit.com/r/ClaudeAI/comments/1oivjvm/claude_code_is_a_beast_tips_from_6_months_of/). After hundreds of requests from the community, diet103 created the [original showcase](https://github.com/diet103/claude-code-infrastructure-showcase) to share these production-tested patterns.
+
+**This fork** extends the original foundation with comprehensive infrastructure engineering coverage (14 additional skills covering platform, security, SRE, cloud, systems, network, build, architecture, observability, database, and API engineering) while preserving all of diet103's breakthrough innovations.
 
 
 ---
