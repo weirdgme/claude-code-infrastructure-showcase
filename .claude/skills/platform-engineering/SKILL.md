@@ -6,6 +6,18 @@ description: Platform engineering and architecture guide covering Infrastructure
 
 Comprehensive guide for building and managing modern platform engineering infrastructure. This skill provides production-tested patterns for Infrastructure as Code, container orchestration, developer platforms, and platform automation.
 
+## When to Use This Skill
+
+Automatically activates when working on:
+- Infrastructure as Code implementation (Terraform, Pulumi, CloudFormation)
+- Kubernetes cluster management and container orchestration
+- Platform architecture design and developer platforms
+- GitOps automation (ArgoCD, Flux)
+- Service mesh configuration (Istio, Linkerd)
+- Multi-tenancy and resource management
+- Platform cost optimization and governance
+- Internal developer portal development (Backstage, Port)
+
 ## Overview
 
 **Purpose:** Enable teams to build robust, scalable platform infrastructure that empowers developers with self-service capabilities while maintaining security, reliability, and cost efficiency.

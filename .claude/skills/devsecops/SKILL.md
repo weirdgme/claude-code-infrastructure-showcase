@@ -236,24 +236,24 @@ spec:
 
 For detailed guidance on specific topics, see:
 
-### Security Scanning
+### Security Scanning & Testing
 - **[security-scanning.md](resources/security-scanning.md)** - SAST, DAST, SCA implementation, tool comparisons, CI/CD integration
 - **[container-security.md](resources/container-security.md)** - Image scanning, base image selection, vulnerability remediation, registry security
-- **[dependency-management.md](resources/dependency-management.md)** - SCA tools, vulnerability tracking, automated updates, license compliance
+- **[supply-chain-security.md](resources/supply-chain-security.md)** - SCA tools, SBOM, dependency security, software supply chain attacks
+- **[vulnerability-management.md](resources/vulnerability-management.md)** - Vulnerability scanning, tracking, prioritization, remediation workflows
+- **[security-testing.md](resources/security-testing.md)** - Security testing in CI/CD, penetration testing, security test automation
 
 ### Access Control & Secrets
-- **[secrets-management.md](resources/secrets-management.md)** - Vault, AWS Secrets Manager, External Secrets Operator, rotation strategies
-- **[identity-access.md](resources/identity-access.md)** - IAM, RBAC, OIDC, service mesh authentication, zero trust
-- **[encryption.md](resources/encryption.md)** - At-rest encryption, in-transit encryption, key management, certificate management
+- **[secrets-management.md](resources/secrets-management.md)** - Vault, AWS Secrets Manager, External Secrets Operator, rotation strategies, encryption
+- **[zero-trust-architecture.md](resources/zero-trust-architecture.md)** - Zero trust principles, identity-based security, service mesh, mTLS
 
 ### Policy & Compliance
 - **[policy-enforcement.md](resources/policy-enforcement.md)** - OPA, Gatekeeper, Kyverno, admission controllers, policy testing
 - **[compliance-automation.md](resources/compliance-automation.md)** - Compliance frameworks (SOC2, PCI-DSS, HIPAA), automated audits
-- **[security-standards.md](resources/security-standards.md)** - OWASP Top 10, CIS benchmarks, security baselines
 
-### Monitoring & Response
-- **[runtime-security.md](resources/runtime-security.md)** - Falco, runtime monitoring, anomaly detection, threat detection
-- **[incident-response.md](resources/incident-response.md)** - Security incident playbooks, forensics, post-mortems
+### CI/CD & Monitoring
+- **[ci-cd-security.md](resources/ci-cd-security.md)** - Secure pipeline design, build security, deployment security, supply chain protection
+- **[security-monitoring.md](resources/security-monitoring.md)** - SIEM, security analytics, threat detection, incident response
 
 ## Best Practices
 

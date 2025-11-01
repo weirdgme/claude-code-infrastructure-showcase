@@ -65,6 +65,39 @@ Browse the [skills catalog](.claude/skills/) and copy what you need.
 
 ---
 
+## Platform Compatibility
+
+### ✅ Fully Supported
+
+**Linux & macOS:**
+- All hooks work natively
+- All skills, agents, and commands function perfectly
+- No additional setup required
+
+**Windows Subsystem for Linux (WSL):**
+- ⭐ **Recommended for Windows users**
+- All hooks work through bash
+- Full functionality available
+- [Install WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+### ⚠️ Partial Support
+
+**Windows (Native PowerShell/CMD):**
+- ❌ Bash hooks will not work natively (`.sh` files)
+- ✅ Skills, agents, and commands work fine
+- ✅ systems-engineering skill includes Windows Server & PowerShell coverage
+- 💡 **Workaround:** Use WSL or create PowerShell hook equivalents
+
+**Infrastructure Skills Windows Coverage:**
+The `systems-engineering` skill provides comprehensive Windows administration guidance:
+- Windows Server administration
+- PowerShell scripting & DSC
+- Active Directory & Group Policy
+- IIS, Registry, WSUS configuration
+- See [systems-engineering resources](.claude/skills/systems-engineering/resources/)
+
+---
+
 ## What Makes This Different?
 
 ### The Auto-Activation Breakthrough
@@ -111,26 +144,50 @@ skill-name/
 
 ```
 .claude/
-├── skills/                 # 5 production skills
-│   ├── backend-dev-guidelines/  (12 resource files)
-│   ├── frontend-dev-guidelines/ (11 resource files)
-│   ├── skill-developer/         (7 resource files)
-│   ├── route-tester/
-│   ├── error-tracking/
+├── skills/                 # 14 production skills
+│   ├── Development (5):
+│   │   ├── backend-dev-guidelines/  (12 resource files)
+│   │   ├── frontend-dev-guidelines/ (11 resource files)
+│   │   ├── skill-developer/         (7 resource files)
+│   │   ├── route-tester/
+│   │   └── error-tracking/
+│   ├── Infrastructure (9):
+│   │   ├── platform-engineering/     (11 resource files)
+│   │   ├── devsecops/               (11 resource files)
+│   │   ├── sre/                     (11 resource files)
+│   │   ├── release-engineering/     (10 resource files)
+│   │   ├── cloud-engineering/       (10 resource files)
+│   │   ├── systems-engineering/     (12 resource files)
+│   │   ├── network-engineering/     (10 resource files)
+│   │   ├── build-engineering/       (10 resource files)
+│   │   └── general-it-engineering/  (10 resource files)
 │   └── skill-rules.json    # Skill activation configuration
-├── hooks/                  # 6 hooks for automation
+├── hooks/                  # 16 hooks for automation
 │   ├── skill-activation-prompt.*  (ESSENTIAL)
 │   ├── post-tool-use-tracker.sh   (ESSENTIAL)
-│   ├── tsc-check.sh        (optional, needs customization)
-│   └── trigger-build-resolver.sh  (optional)
-├── agents/                 # 10 specialized agents
-│   ├── code-architecture-reviewer.md
-│   ├── refactor-planner.md
-│   ├── frontend-error-fixer.md
-│   └── ... 7 more
-└── commands/               # 3 slash commands
-    ├── dev-docs.md
-    └── ...
+│   ├── security-policy-check.sh   (infrastructure)
+│   ├── terraform-validator.sh     (infrastructure)
+│   ├── k8s-manifest-validator.sh  (infrastructure)
+│   └── ... 11 more
+├── agents/                 # 21 specialized agents
+│   ├── Development (10):
+│   │   ├── code-architecture-reviewer.md
+│   │   ├── refactor-planner.md
+│   │   └── ... 8 more
+│   └── Infrastructure (11):
+│       ├── infrastructure-architect.md
+│       ├── kubernetes-specialist.md
+│       ├── security-scanner.md
+│       ├── cost-optimizer.md
+│       └── ... 7 more
+└── commands/               # 8 slash commands
+    ├── Development (3):
+    │   ├── dev-docs.md
+    │   └── ... 2 more
+    └── Infrastructure (5):
+        ├── infra-plan.md
+        ├── security-review.md
+        └── ... 3 more
 
 dev/
 └── active/                 # Dev docs pattern examples
@@ -141,7 +198,9 @@ dev/
 
 ## Component Catalog
 
-### 🎨 Skills (5)
+### 🎨 Skills (14 Total)
+
+**Development Skills (5):**
 
 | Skill | Lines | Purpose | Best For |
 |-------|-------|---------|----------|
@@ -150,6 +209,20 @@ dev/
 | [**frontend-dev-guidelines**](.claude/skills/frontend-dev-guidelines/) | 398 | React/MUI v7/TypeScript | React frontends |
 | [**route-tester**](.claude/skills/route-tester/) | 389 | Testing authenticated routes | API testing |
 | [**error-tracking**](.claude/skills/error-tracking/) | ~250 | Sentry integration | Error monitoring |
+
+**Infrastructure Skills (9):**
+
+| Skill | Resources | Purpose | Best For |
+|-------|-----------|---------|----------|
+| [**platform-engineering**](.claude/skills/platform-engineering/) | 11 | IaC, Kubernetes, GitOps | Platform architecture |
+| [**devsecops**](.claude/skills/devsecops/) | 11 | Security, compliance | Security automation |
+| [**sre**](.claude/skills/sre/) | 11 | SLO/SLI, observability | Site reliability |
+| [**release-engineering**](.claude/skills/release-engineering/) | 10 | CI/CD, deployments | Release pipelines |
+| [**cloud-engineering**](.claude/skills/cloud-engineering/) | 10 | AWS, Azure, GCP | Cloud architecture |
+| [**systems-engineering**](.claude/skills/systems-engineering/) | 12 | Linux/Windows, Ansible/PowerShell, performance tuning | Systems administration, automation |
+| [**network-engineering**](.claude/skills/network-engineering/) | 10 | Network design | Network architecture |
+| [**build-engineering**](.claude/skills/build-engineering/) | 10 | Build systems | Build optimization |
+| [**general-it-engineering**](.claude/skills/general-it-engineering/) | 10 | ITIL, ITSM | IT operations |
 
 **All skills follow the modular pattern** - main file + resource files for progressive disclosure.
 
@@ -170,9 +243,9 @@ dev/
 
 **👉 [Hook setup guide →](.claude/hooks/README.md)**
 
-### 🤖 Agents (10)
+### 🤖 Agents (21 Total)
 
-**Standalone - just copy and use!**
+**Development Agents (10):**
 
 | Agent | Purpose |
 |-------|---------|
@@ -187,15 +260,69 @@ dev/
 | auth-route-debugger | Debug auth issues |
 | auto-error-resolver | Auto-fix TypeScript errors |
 
+**Infrastructure Agents (11):**
+
+| Agent | Purpose |
+|-------|---------|
+| infrastructure-architect | Design cloud-native architectures |
+| kubernetes-specialist | Kubernetes deployment and troubleshooting |
+| iac-code-generator | Generate Infrastructure as Code |
+| incident-responder | Incident response and debugging |
+| security-scanner | Security vulnerability analysis |
+| deployment-orchestrator | Design deployment pipelines |
+| cost-optimizer | Cloud cost analysis and optimization |
+| migration-planner | Migration and modernization planning |
+| network-architect | Network design and architecture |
+| build-optimizer | Build performance optimization |
+
+**All agents are standalone** - just copy and use!
+
 **👉 [How agents work →](.claude/agents/README.md)**
 
-### 💬 Slash Commands (3)
+### 🏗️ Infrastructure Skills (9)
+
+**Production-ready infrastructure engineering skills:**
+
+| Skill | Resources | Coverage | Best For |
+|-------|-----------|----------|----------|
+| [**platform-engineering**](.claude/skills/platform-engineering/) | 11 | IaC, Kubernetes, GitOps, Service Mesh | Platform architecture, container orchestration |
+| [**devsecops**](.claude/skills/devsecops/) | 11 | Security scanning, secrets, compliance | Security automation, policy enforcement |
+| [**sre**](.claude/skills/sre/) | 11 | SLO/SLI, observability, incident response | Site reliability, monitoring, on-call |
+| [**release-engineering**](.claude/skills/release-engineering/) | 10 | CI/CD, deployment strategies, versioning | Release pipelines, progressive delivery |
+| [**cloud-engineering**](.claude/skills/cloud-engineering/) | 10 | AWS, Azure, GCP, multi-cloud | Cloud architecture, migration, optimization |
+| [**systems-engineering**](.claude/skills/systems-engineering/) | 12 | Linux/Windows, Ansible/PowerShell, performance tuning | Systems administration, automation |
+| [**network-engineering**](.claude/skills/network-engineering/) | 10 | Network design, load balancing, security | Network architecture, troubleshooting |
+| [**build-engineering**](.claude/skills/build-engineering/) | 10 | Build systems, Gradle, Maven, Bazel | Build optimization, monorepos |
+| [**general-it-engineering**](.claude/skills/general-it-engineering/) | 10 | ITIL, ITSM, change management, governance | IT operations, service management |
+
+**All infrastructure skills include:**
+- Comprehensive resource files (<500 lines each)
+- Production patterns and examples
+- Best practices and anti-patterns
+- Integration with other skills
+- Auto-activation via skill-rules.json
+
+**👉 [Infrastructure skills guide →](.claude/skills/README.md)**
+
+### 💬 Slash Commands (8)
+
+**Development Commands:**
 
 | Command | Purpose |
 |---------|---------|
 | /dev-docs | Create structured dev documentation |
 | /dev-docs-update | Update docs before context reset |
 | /route-research-for-testing | Research route patterns for testing |
+
+**Infrastructure Commands:**
+
+| Command | Purpose |
+|---------|---------|
+| /infra-plan | Create infrastructure implementation plan |
+| /security-review | Security review of infrastructure code |
+| /incident-debug | Structured incident debugging guide |
+| /cost-analysis | Infrastructure cost analysis and optimization |
+| /migration-plan | Cloud migration or modernization plan |
 
 ---
 

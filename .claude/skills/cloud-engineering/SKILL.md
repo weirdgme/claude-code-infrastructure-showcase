@@ -6,6 +6,19 @@ description: Cloud engineering guide covering AWS, Azure, GCP services, multi-cl
 
 Comprehensive guide for designing, building, and managing cloud infrastructure across AWS, Azure, and GCP. This skill provides production-tested patterns for cloud-native architectures, multi-cloud strategies, serverless computing, and cloud optimization.
 
+## When to Use This Skill
+
+Automatically activates when working on:
+- AWS, Azure, or GCP service selection and implementation
+- Cloud architecture design and cloud-native patterns
+- Multi-cloud and hybrid cloud strategies
+- Serverless application development (Lambda, Cloud Functions, Azure Functions)
+- Cloud networking (VPC, VNet, Cloud VPC)
+- Cloud cost optimization and FinOps practices
+- Cloud security and IAM configuration
+- Cloud migration planning and execution
+- Well-Architected Framework implementation
+
 ## Overview
 
 **Purpose:** Enable teams to build robust, scalable cloud infrastructure leveraging the best services from AWS, Azure, and GCP while maintaining portability, cost efficiency, and operational excellence.

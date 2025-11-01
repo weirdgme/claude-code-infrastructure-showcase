@@ -6,6 +6,19 @@ description: General IT engineering covering ITIL framework, service management,
 
 Comprehensive guide for general IT engineering covering IT service management (ITSM), ITIL frameworks, change management, asset lifecycle, incident management, business continuity, IT governance, and enterprise IT operations.
 
+## When to Use This Skill
+
+Automatically activates when working on:
+- ITIL framework implementation and service management
+- Incident and problem management processes
+- Change management and CAB procedures
+- IT asset lifecycle management
+- Service catalog and service desk operations
+- Business continuity and disaster recovery planning
+- IT governance and compliance frameworks
+- Help desk operations and ticketing systems
+- Enterprise monitoring and automation orchestration
+
 ## Overview
 
 **Purpose:** Enable teams to establish, manage, and optimize IT services and operations using industry-standard frameworks and best practices for delivering reliable, efficient, and secure IT services.

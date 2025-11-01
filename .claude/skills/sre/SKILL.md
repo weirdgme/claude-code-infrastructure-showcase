@@ -296,23 +296,23 @@ spec:
 For detailed guidance on specific topics, see:
 
 ### Core SRE Practices
-- **[sli-slo-sla.md](resources/sli-slo-sla.md)** - Service level definitions, SLO implementation, error budget tracking
-- **[error-budgets.md](resources/error-budgets.md)** - Error budget policies, burn rate alerts, budget management
-- **[incident-management.md](resources/incident-management.md)** - Incident response procedures, runbooks, post-mortems
+- **[slo-sli-sla.md](resources/slo-sli-sla.md)** - Service level definitions, SLO implementation, error budgets, SLA management
+- **[incident-management.md](resources/incident-management.md)** - Incident response procedures, runbooks, post-mortems, severity levels
+- **[toil-reduction.md](resources/toil-reduction.md)** - Identifying toil, automation strategies, measuring toil reduction
 
 ### Observability
-- **[observability.md](resources/observability.md)** - Metrics, logs, traces, Prometheus, Grafana, Jaeger, distributed tracing
-- **[monitoring-alerting.md](resources/monitoring-alerting.md)** - Alert design, notification strategies, on-call alerting
-- **[performance-optimization.md](resources/performance-optimization.md)** - Profiling, performance tuning, optimization techniques
+- **[observability-stack.md](resources/observability-stack.md)** - Metrics, logs, traces, Prometheus, Grafana, Jaeger, distributed tracing
+- **[alerting-best-practices.md](resources/alerting-best-practices.md)** - Alert design, notification strategies, on-call alerting, alert fatigue
+- **[performance-optimization.md](resources/performance-optimization.md)** - Profiling, performance tuning, optimization techniques, bottleneck analysis
 
 ### Operations
-- **[on-call-practices.md](resources/on-call-practices.md)** - On-call rotations, escalation procedures, burnout prevention
-- **[capacity-planning.md](resources/capacity-planning.md)** - Load testing, capacity modeling, growth forecasting
-- **[disaster-recovery.md](resources/disaster-recovery.md)** - Backup strategies, RPO/RTO, DR testing, failover procedures
+- **[on-call-runbooks.md](resources/on-call-runbooks.md)** - On-call rotations, escalation procedures, runbook templates, burnout prevention
+- **[capacity-planning.md](resources/capacity-planning.md)** - Load testing, capacity modeling, growth forecasting, resource planning
+- **[disaster-recovery.md](resources/disaster-recovery.md)** - Backup strategies, RPO/RTO, DR testing, failover procedures, BC planning
 
 ### Reliability Patterns
-- **[reliability-patterns.md](resources/reliability-patterns.md)** - Circuit breakers, retries, timeouts, bulkheads, rate limiting
-- **[chaos-engineering.md](resources/chaos-engineering.md)** - Fault injection, resilience testing, game days
+- **[reliability-patterns.md](resources/reliability-patterns.md)** - Circuit breakers, retries, timeouts, bulkheads, rate limiting, graceful degradation
+- **[chaos-engineering.md](resources/chaos-engineering.md)** - Fault injection, resilience testing, game days, chaos experiments
 
 ## Best Practices
 

@@ -1,6 +1,7 @@
 ---
 name: auto-error-resolver
 description: Automatically fix TypeScript compilation errors
+model: sonnet
 tools: Read, Write, Edit, MultiEdit, Bash
 ---
 
