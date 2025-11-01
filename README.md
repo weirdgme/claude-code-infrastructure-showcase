@@ -166,23 +166,28 @@ skill-name/
 
 ```
 .claude/
-├── skills/                 # 14 production skills
+├── skills/                 # 19 production skills
 │   ├── Development (5):
-│   │   ├── backend-dev-guidelines/  (12 resource files)
-│   │   ├── frontend-dev-guidelines/ (11 resource files)
+│   │   ├── backend-dev-guidelines/  (11 resource files)
+│   │   ├── frontend-dev-guidelines/ (10 resource files)
 │   │   ├── skill-developer/         (7 resource files)
 │   │   ├── route-tester/
 │   │   └── error-tracking/
-│   ├── Infrastructure (9):
-│   │   ├── platform-engineering/     (11 resource files)
-│   │   ├── devsecops/               (11 resource files)
-│   │   ├── sre/                     (11 resource files)
-│   │   ├── release-engineering/     (10 resource files)
-│   │   ├── cloud-engineering/       (10 resource files)
-│   │   ├── systems-engineering/     (12 resource files)
-│   │   ├── network-engineering/     (10 resource files)
-│   │   ├── build-engineering/       (10 resource files)
-│   │   └── general-it-engineering/  (10 resource files)
+│   ├── Infrastructure (14):
+│   │   ├── platform-engineering/          (11 resource files)
+│   │   ├── devsecops/                    (11 resource files)
+│   │   ├── sre/                          (11 resource files)
+│   │   ├── release-engineering/          (10 resource files)
+│   │   ├── cloud-engineering/            (10 resource files)
+│   │   ├── systems-engineering/          (12 resource files)
+│   │   ├── network-engineering/          (10 resource files)
+│   │   ├── build-engineering/            (10 resource files)
+│   │   ├── general-it-engineering/       (10 resource files)
+│   │   ├── infrastructure-architecture/  (11 resource files)
+│   │   ├── documentation-as-code/        (10 resource files)
+│   │   ├── observability-engineering/    (6 resource files)
+│   │   ├── database-engineering/         (4 resource files)
+│   │   └── api-engineering/              (4 resource files)
 │   └── skill-rules.json    # Skill activation configuration
 ├── hooks/                  # 16 hooks for automation
 │   ├── skill-activation-prompt.*  (ESSENTIAL)
@@ -220,7 +225,7 @@ dev/
 
 ## Component Catalog
 
-### 🎨 Skills (14 Total)
+### 🎨 Skills (19 Total)
 
 **Development Skills (5):**
 
@@ -232,7 +237,7 @@ dev/
 | [**route-tester**](.claude/skills/route-tester/) | 389 | Testing authenticated routes | API testing |
 | [**error-tracking**](.claude/skills/error-tracking/) | ~250 | Sentry integration | Error monitoring |
 
-**Infrastructure Skills (9):**
+**Infrastructure Skills (14):**
 
 | Skill | Resources | Purpose | Best For |
 |-------|-----------|---------|----------|
@@ -245,6 +250,11 @@ dev/
 | [**network-engineering**](.claude/skills/network-engineering/) | 10 | Network design | Network architecture |
 | [**build-engineering**](.claude/skills/build-engineering/) | 10 | Build systems | Build optimization |
 | [**general-it-engineering**](.claude/skills/general-it-engineering/) | 10 | ITIL, ITSM | IT operations |
+| [**infrastructure-architecture**](.claude/skills/infrastructure-architecture/) | 11 | System design, ADRs, multi-region, DR | Architecture patterns, capacity planning |
+| [**documentation-as-code**](.claude/skills/documentation-as-code/) | 10 | Technical writing, API docs, diagrams | Documentation automation |
+| [**observability-engineering**](.claude/skills/observability-engineering/) | 6 | Distributed tracing, OpenTelemetry, APM | Observability, monitoring |
+| [**database-engineering**](.claude/skills/database-engineering/) | 4 | PostgreSQL, query optimization | Database administration |
+| [**api-engineering**](.claude/skills/api-engineering/) | 4 | REST, GraphQL, API gateways | API design, rate limiting |
 
 **All skills follow the modular pattern** - main file + resource files for progressive disclosure.
 
@@ -301,7 +311,7 @@ dev/
 
 **👉 [How agents work →](.claude/agents/README.md)**
 
-### 🏗️ Infrastructure Skills (9)
+### 🏗️ Infrastructure Skills (14)
 
 **Production-ready infrastructure engineering skills:**
 
@@ -316,6 +326,11 @@ dev/
 | [**network-engineering**](.claude/skills/network-engineering/) | 10 | Network design, load balancing, security | Network architecture, troubleshooting |
 | [**build-engineering**](.claude/skills/build-engineering/) | 10 | Build systems, Gradle, Maven, Bazel | Build optimization, monorepos |
 | [**general-it-engineering**](.claude/skills/general-it-engineering/) | 10 | ITIL, ITSM, change management, governance | IT operations, service management |
+| [**infrastructure-architecture**](.claude/skills/infrastructure-architecture/) | 11 | System design, ADRs, multi-region, DR, capacity planning | Architecture patterns, design decisions |
+| [**documentation-as-code**](.claude/skills/documentation-as-code/) | 10 | Technical writing, API docs, OpenAPI, diagrams, automation | Documentation workflows, standards |
+| [**observability-engineering**](.claude/skills/observability-engineering/) | 6 | Distributed tracing, OpenTelemetry, APM, logs | Observability, performance monitoring |
+| [**database-engineering**](.claude/skills/database-engineering/) | 4 | PostgreSQL/MySQL, query optimization, replication | Database administration, performance |
+| [**api-engineering**](.claude/skills/api-engineering/) | 4 | REST, GraphQL, API gateways, rate limiting | API design, versioning |
 
 **All infrastructure skills include:**
 - Comprehensive resource files (<500 lines each)
@@ -368,6 +383,11 @@ dev/
 | **Build Systems** | build-engineering | Gradle, Maven, Bazel, build optimization, caching strategies |
 | **Network Design** | network-engineering | Load balancing, SDN, VPN, network security, service mesh networking |
 | **IT Operations** | general-it-engineering | ITIL/ITSM, change management, incident management, service desk |
+| **Architecture Patterns** | infrastructure-architecture | System design, ADRs, multi-region, DR, capacity planning |
+| **Documentation** | documentation-as-code | Technical writing, API docs, OpenAPI, diagrams, automation |
+| **Observability** | observability-engineering | Distributed tracing, OpenTelemetry, APM, log aggregation |
+| **Database Administration** | database-engineering | PostgreSQL/MySQL, query optimization, replication, backups |
+| **API Design** | api-engineering | REST, GraphQL, API gateways, rate limiting, versioning |
 
 **Why this approach?**
 - ✅ Aligns with modern engineering org structures (Platform team, SRE team, Security team, etc.)
@@ -378,27 +398,27 @@ dev/
 
 **"DevSecOps" is security-focused**, not general DevOps - it covers SAST/DAST, container scanning, secrets management, and compliance automation.
 
-### Missing Infrastructure Disciplines?
+### Complete Infrastructure Coverage
 
-**Currently not covered** (potential future additions):
+**All 14 infrastructure disciplines are now covered:**
+- ✅ Platform operations (IaC, Kubernetes, GitOps)
+- ✅ CI/CD and release management
+- ✅ Cloud infrastructure (AWS, Azure, GCP)
+- ✅ Security automation and compliance
+- ✅ Site reliability and monitoring
+- ✅ Systems administration (Linux & Windows)
+- ✅ Network engineering and architecture
+- ✅ Build systems and optimization
+- ✅ IT operations management
+- ✅ Infrastructure architecture patterns
+- ✅ Documentation as code workflows
+- ✅ Observability and distributed tracing
+- ✅ Database engineering
+- ✅ API design and engineering
 
-- **Infrastructure Architecture** - High-level design patterns, multi-region, DR, capacity planning, architecture decision records
-- **Documentation as Code** - Technical writing, docs-as-code practices, OpenAPI/Swagger, API documentation, diagram generation
-- **Database Engineering** - PostgreSQL/MySQL administration, query optimization, replication, backup/restore, migration strategies
-- **Observability Engineering** - Deep dive beyond SRE monitoring: distributed tracing, APM, logs aggregation, metrics design
-- **API Engineering** - API design patterns, REST, GraphQL, API gateways, rate limiting, versioning strategies
+**This provides comprehensive coverage** for modern infrastructure engineering teams - from platform engineering to database administration, from security to observability.
 
-**Current coverage is comprehensive for:**
-- Platform operations (IaC, Kubernetes, GitOps)
-- CI/CD and release management
-- Cloud infrastructure (AWS, Azure, GCP)
-- Security automation
-- Site reliability practices
-- Systems and network administration
-- Build optimization
-- IT operations management
-
-**Want to contribute?** Open an issue or PR to add missing disciplines!
+**Want to contribute?** Open an issue or PR to expand existing skills with additional resources and patterns!
 
 ---
 
