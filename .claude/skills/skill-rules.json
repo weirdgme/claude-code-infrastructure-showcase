@@ -510,12 +510,20 @@
             "type": "domain",
             "enforcement": "suggest",
             "priority": "high",
-            "description": "Systems engineering covering Linux administration, networking, performance tuning, and configuration management",
+            "description": "Systems engineering and administration covering Linux and Windows administration, networking, performance tuning, configuration management (Ansible/Chef/Puppet/DSC), shell scripting (bash/PowerShell), and troubleshooting",
             "promptTriggers": {
                 "keywords": [
                     "Linux",
+                    "Windows",
+                    "Windows Server",
                     "system administration",
                     "systemd",
+                    "Active Directory",
+                    "AD",
+                    "GPO",
+                    "Group Policy",
+                    "PowerShell",
+                    "IIS",
                     "networking",
                     "TCP/IP",
                     "DNS",
@@ -525,6 +533,8 @@
                     "Ansible",
                     "Chef",
                     "Puppet",
+                    "DSC",
+                    "Desired State Configuration",
                     "shell script",
                     "bash",
                     "configuration management",
@@ -532,11 +542,13 @@
                     "security hardening"
                 ],
                 "intentPatterns": [
-                    "(Linux|system).*?(admin|administration|configure|setup)",
+                    "(Linux|Windows|system).*?(admin|administration|configure|setup)",
+                    "(Active Directory|AD|GPO).*?(manage|configure|create)",
+                    "(PowerShell|bash).*?(script|automation)",
                     "(network|networking).*?(configure|troubleshoot|debug)",
-                    "(performance|optimize|tuning).*?(system|server|Linux)",
-                    "(Ansible|Chef|Puppet).*?(playbook|recipe|manifest)",
-                    "(shell|bash).*?(script|automation)"
+                    "(performance|optimize|tuning).*?(system|server|Linux|Windows)",
+                    "(Ansible|Chef|Puppet|DSC).*?(playbook|recipe|manifest|configuration)",
+                    "(IIS|web server).*?(configure|setup|manage)"
                 ]
             },
             "fileTriggers": {
@@ -545,14 +557,23 @@
                     "**/ansible/**/*.yaml",
                     "**/playbooks/**/*.yml",
                     "**/*.sh",
+                    "**/*.ps1",
                     "**/chef/**/*.rb",
-                    "**/puppet/**/*.pp"
+                    "**/puppet/**/*.pp",
+                    "**/scripts/**/*.ps1",
+                    "**/powershell/**/*.ps1"
                 ],
                 "contentPatterns": [
                     "- hosts:",
                     "- name:.*tasks:",
                     "#!/bin/bash",
-                    "#!/bin/sh"
+                    "#!/bin/sh",
+                    "#Requires -Version",
+                    "Get-",
+                    "Set-",
+                    "New-",
+                    "Remove-",
+                    "Import-Module"
                 ]
             }
         },

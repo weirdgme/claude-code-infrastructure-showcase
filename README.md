@@ -257,7 +257,7 @@ dev/
 | [**sre**](.claude/skills/sre/) | 10 | SLO/SLI, observability, incident response | Site reliability, monitoring, on-call |
 | [**release-engineering**](.claude/skills/release-engineering/) | 10 | CI/CD, deployment strategies, versioning | Release pipelines, progressive delivery |
 | [**cloud-engineering**](.claude/skills/cloud-engineering/) | 10 | AWS, Azure, GCP, multi-cloud | Cloud architecture, migration, optimization |
-| [**systems-engineering**](.claude/skills/systems-engineering/) | 10 | Linux, Ansible, performance tuning | Systems administration, automation |
+| [**systems-engineering**](.claude/skills/systems-engineering/) | 12 | Linux/Windows, Ansible/PowerShell, performance tuning | Systems administration, automation |
 | [**network-engineering**](.claude/skills/network-engineering/) | 10 | Network design, load balancing, security | Network architecture, troubleshooting |
 | [**build-engineering**](.claude/skills/build-engineering/) | 10 | Build systems, Gradle, Maven, Bazel | Build optimization, monorepos |
 | [**general-it-engineering**](.claude/skills/general-it-engineering/) | 10 | ITIL, ITSM, change management, governance | IT operations, service management |

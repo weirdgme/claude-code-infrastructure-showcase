@@ -186,33 +186,46 @@ When a skill activates, Claude will mention it and provide relevant guidance fro
 ### 6. Systems Engineering (`systems-engineering`)
 
 **What it covers:**
-- Linux administration
+- Linux and Windows Server administration
 - Networking fundamentals
-- Performance tuning
-- Configuration management (Ansible, Chef, Puppet)
+- Performance tuning (both platforms)
+- Configuration management (Ansible, Chef, Puppet, DSC)
 - System monitoring
-- Shell scripting and automation
+- Shell scripting and automation (bash, PowerShell)
+- Active Directory and Group Policy
+- Windows services and IIS
 
 **Activates when you:**
-- Edit system files: `playbooks/*.yml`, `*.sh` scripts
-- Mention: linux, ansible, bash, systemd, performance tuning
+- Edit system files: `playbooks/*.yml`, `*.sh`, `*.ps1` scripts
+- Mention: linux, windows, ansible, bash, powershell, systemd, active directory, performance tuning
 
 **Example usage:**
 ```bash
 # Scenario 1: Ansible automation
 "Write an Ansible playbook to configure web servers"
 
-# Scenario 2: Performance tuning
+# Scenario 2: Linux performance tuning
 "Tune Linux kernel parameters for database workload"
 
 # Scenario 3: Shell scripting
 "Create a bash script with proper error handling"
+
+# Scenario 4: Windows administration
+"Configure Active Directory users and groups with PowerShell"
+
+# Scenario 5: PowerShell automation
+"Create a PowerShell script to monitor Windows services"
+
+# Scenario 6: Cross-platform
+"Set up configuration management for both Linux and Windows servers"
 ```
 
 **Key resource files:**
 - `linux-administration.md` - systemd, packages, users
-- `configuration-management.md` - Ansible/Chef/Puppet
-- `performance-tuning.md` - CPU, memory, disk I/O
+- `windows-administration.md` - Active Directory, GPO, IIS, services
+- `powershell-scripting.md` - PowerShell automation and DSC
+- `configuration-management.md` - Ansible/Chef/Puppet/DSC
+- `performance-tuning.md` - CPU, memory, disk I/O optimization
 
 ---
 

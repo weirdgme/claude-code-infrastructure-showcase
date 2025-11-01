@@ -1,32 +1,32 @@
 ---
-description: Systems engineering covering Linux administration, networking fundamentals, performance tuning, configuration management (Ansible/Chef/Puppet), system monitoring, shell scripting, and troubleshooting. Use when managing Linux systems, optimizing performance, automating operations, or debugging system issues. (project)
+description: Systems engineering and administration covering Linux and Windows administration, networking fundamentals, performance tuning, configuration management (Ansible/Chef/Puppet), system monitoring, shell scripting (bash/PowerShell), and troubleshooting. Use when managing Linux or Windows systems, optimizing performance, automating operations, or debugging system issues. (project)
 ---
 
 # Systems Engineering & Administration
 
-Comprehensive guide for Linux system administration, networking, performance optimization, configuration management, and operational automation. This skill provides production-tested patterns for managing infrastructure at scale.
+Comprehensive guide for Linux and Windows system administration, networking, performance optimization, configuration management, and operational automation. This skill provides production-tested patterns for managing infrastructure at scale across both platforms.
 
 ## Overview
 
-**Purpose:** Enable teams to build, configure, and maintain robust Linux-based infrastructure with automation, monitoring, and performance optimization.
+**Purpose:** Enable teams to build, configure, and maintain robust infrastructure with automation, monitoring, and performance optimization on both Linux and Windows platforms.
 
 **Scope:**
-- Linux administration and system management
-- Networking fundamentals (TCP/IP, DNS, load balancing)
-- Performance tuning and optimization
-- Configuration management (Ansible, Chef, Puppet)
+- Linux and Windows Server administration
+- Networking fundamentals (TCP/IP, DNS, load balancing, firewalls)
+- Performance tuning and optimization (both platforms)
+- Configuration management (Ansible, Chef, Puppet, DSC)
 - System monitoring and observability
-- Shell scripting and automation
+- Shell scripting and automation (bash, PowerShell)
 - Troubleshooting and debugging
-- Security hardening
-- Storage management
+- Security hardening (Linux and Windows)
+- Storage management (LVM, Windows Storage Spaces)
 - Operational excellence
 
 **This skill is for:**
-- Systems engineers managing Linux infrastructure
-- DevOps engineers automating operations
+- Systems engineers managing Linux and Windows infrastructure
+- DevOps engineers automating operations across platforms
 - SREs optimizing system performance
-- IT administrators maintaining servers
+- IT administrators maintaining servers (Linux/Windows)
 - Platform engineers building foundational services
 
 ## Quick Start Checklist
@@ -451,22 +451,26 @@ echo "=== Performance Analysis Complete ==="
 
 For detailed guidance on specific topics, see:
 
-### System Administration
+### Linux Administration
 - **[linux-administration.md](resources/linux-administration.md)** - systemd, user management, package managers, LVM, file systems, boot process
 - **[storage-management.md](resources/storage-management.md)** - LVM operations, RAID, file systems, backups, snapshots, capacity planning
+- **[shell-scripting.md](resources/shell-scripting.md)** - Bash scripting patterns, error handling, testing, best practices
+
+### Windows Administration
+- **[windows-administration.md](resources/windows-administration.md)** - Windows Server, Active Directory, GPO, IIS, services, registry, security hardening
+- **[powershell-scripting.md](resources/powershell-scripting.md)** - PowerShell fundamentals, scripting, DSC, remote management, best practices
 
 ### Networking
 - **[networking-fundamentals.md](resources/networking-fundamentals.md)** - TCP/IP, DNS, load balancers, firewalls, routing, network debugging
-- **[security-hardening.md](resources/security-hardening.md)** - OS hardening, CIS benchmarks, firewall, SELinux, SSH, audit logging
+- **[security-hardening.md](resources/security-hardening.md)** - OS hardening, CIS benchmarks, firewall, SELinux/AppArmor, SSH, audit logging
 
 ### Performance & Troubleshooting
 - **[performance-tuning.md](resources/performance-tuning.md)** - CPU optimization, memory tuning, disk I/O, network performance, profiling tools
 - **[troubleshooting-guide.md](resources/troubleshooting-guide.md)** - Debugging methodology, diagnostic tools, common issues, log analysis
 
-### Automation
-- **[configuration-management.md](resources/configuration-management.md)** - Ansible playbooks, Chef cookbooks, Puppet manifests, best practices
-- **[shell-scripting.md](resources/shell-scripting.md)** - Bash patterns, error handling, testing, best practices
-- **[automation-patterns.md](resources/automation-patterns.md)** - Cron jobs, systemd timers, idempotency, error handling
+### Automation & Configuration
+- **[configuration-management.md](resources/configuration-management.md)** - Ansible playbooks, Chef cookbooks, Puppet manifests, DSC, best practices
+- **[automation-patterns.md](resources/automation-patterns.md)** - Cron jobs, systemd timers, Task Scheduler, idempotency, error handling
 
 ### Monitoring
 - **[system-monitoring.md](resources/system-monitoring.md)** - Log aggregation, metrics collection, dashboards, alerting, monitoring best practices
