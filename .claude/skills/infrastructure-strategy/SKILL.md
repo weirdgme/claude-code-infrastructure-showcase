@@ -96,6 +96,76 @@ Best for:
 - **Regulated/government:** AWS GovCloud, Azure Government, or OCI
 - **Oracle DB heavy:** OCI (database licensing savings)
 
+### Cloud Strategy Scenarios
+
+**Scenario: "Should we go all-in on AWS or stay flexible?"**
+- **All-in (Recommended):** Use AWS-specific services (Lambda, DynamoDB, etc.) for faster development
+- **Flexible:** Use portable tech (Kubernetes, Postgres) but sacrifice AWS integration benefits
+- **Reality:** Portability is expensive. Most companies that plan for multi-cloud never actually migrate.
+- **Decision:** Go all-in unless you have specific multi-cloud requirement
+
+**Scenario: "Is multi-cloud worth the complexity?"**
+- **Answer:** Usually NO. Multi-cloud costs 2-3x in operational overhead
+- **Only do multi-cloud if:**
+  - Large enterprise (500+ engineers) with resources
+  - Regulatory requirement (data must stay in specific regions/clouds)
+  - M&A (acquired company on different cloud, temporary state)
+- **Alternative:** Design for cloud portability (Kubernetes, Terraform) but run on single cloud
+
+**Scenario: "Do we need disaster recovery in another cloud?"**
+- **Question:** "What's the failure mode? Entire AWS region or all of AWS?"
+- **Reality:** Multi-region in same cloud is simpler and handles 99.9% of DR scenarios
+- **Multi-cloud DR:** Only for catastrophic cloud-wide failures (extremely rare)
+- **Decision:** Multi-region DR first, multi-cloud DR only if mandated by compliance
+
+**Scenario: "Serverless vs container strategy?"**
+- **Serverless (Lambda/Cloud Functions):**
+  - Best for: Event-driven, variable load, stateless functions
+  - Not for: Long-running, stateful, complex orchestration
+- **Containers (ECS/EKS/Cloud Run):**
+  - Best for: Always-on services, stateful apps, complex dependencies
+  - Not for: Simple event handlers, variable load (without autoscaling)
+- **Decision:** Use both - serverless for events, containers for services
+
+**Scenario: "Moving from on-prem to cloud?"**
+- **Timeline:** 12-36 months depending on complexity
+- **Strategy:**
+  - Phase 1: Lift-and-shift (VMs) to derisk
+  - Phase 2: Re-platform (containerize, use managed services)
+  - Phase 3: Re-architect (cloud-native, serverless)
+- **Don't:** Big-bang migration. Do: Incremental, service by service
+
+**Scenario: "Cost difference between clouds?"**
+- **Reality:** Pricing is similar for compute/storage (within 10-20%)
+- **True cost differences:**
+  - Data egress (can be 3-5x different)
+  - Managed services (varies widely)
+  - Enterprise support (20% of spend)
+  - Reserved instance discounts (negotiate these!)
+- **Decision:** Choose based on services/expertise, not just pricing
+
+**Scenario: "Should we use GCP for ML workloads and AWS for everything else?"**
+- **Sounds smart, but:** Operational complexity of managing two clouds
+- **Better:** Use AWS SageMaker or GCP Vertex AI - both are excellent
+- **Only split if:** ML team is separate and has strong GCP preference
+- **Reality:** Integration complexity usually outweighs best-of-breed benefits
+
+**Scenario: "GovCloud requirement - what changes?"**
+- **Limited services:** Not all AWS services available in GovCloud
+- **Higher cost:** Separate infrastructure, lower economies of scale
+- **Compliance burden:** STIG hardening, continuous monitoring, audit paperwork
+- **Staffing:** Need cleared personnel for some operations
+- **Timeline:** Add 3-6 months to normal cloud migration
+
+**Scenario: "Cloud-native vs cloud-agnostic?"**
+- **Cloud-native:** Use cloud-specific services (managed databases, serverless)
+  - Faster development, lower operational burden
+  - Trade-off: Harder to migrate clouds
+- **Cloud-agnostic:** Use portable tech (Kubernetes, open source)
+  - Flexibility to move clouds
+  - Trade-off: More operational burden, slower development
+- **Recommendation:** Be pragmatic - use cloud services but document dependencies
+
 ### Government and Cleared Clouds
 
 **For regulated industries:**
@@ -210,6 +280,71 @@ Conclusion: Build seems cheaper BUT:
 □ Does "buy" option have enterprise SLA and support?
 ```
 
+### Build vs Buy Scenarios
+
+**Scenario: "Should we build an internal platform like Heroku?"**
+- **Build cost:** 8-12 engineers × 12 months = $2M+ initial, $1.5M/year ongoing
+- **Buy alternative:** Heroku, Cloud Run, App Runner - $50-200K/year
+- **Build if:** 150+ engineers, unique workflows, platform is differentiator
+- **Buy if:** < 100 engineers, standard app deployment, want speed
+- **Hidden costs of building:** In-house support, documentation, feature requests, security updates
+
+**Scenario: "Payment processing - build or use Stripe?"**
+- **Build:** PCI compliance alone costs $500K+/year
+- **Stripe:** 2.9% + $0.30 per transaction
+- **Break-even:** Only makes sense at $100M+ annual GMV with specialized needs
+- **Decision:** Almost always buy. Payments are not your core business.
+
+**Scenario: "APM - commercial (DataDog/New Relic) vs open source (Prometheus/Grafana)?"**
+- **Commercial ($200-500K/year):**
+  - Full-featured, hosted, 24/7 support
+  - Fast time to value (days)
+  - Best for teams < 50 engineers
+- **Open Source ($100-200K/year in engineering time):**
+  - Self-hosted, requires dedicated team
+  - Slower time to value (months)
+  - Best for teams > 100 engineers with SRE expertise
+- **Decision:** Buy commercial until you have SRE team to run OSS
+
+**Scenario: "Service mesh - build custom vs buy Istio/Linkerd vs buy Consul?"**
+- **Build custom:** 6-12 months, ongoing maintenance nightmare
+- **Open source (Istio/Linkerd):** Complex to operate, requires expertise
+- **Commercial (Consul Enterprise, Gloo):** Easier, supported, expensive
+- **Reality:** Most companies don't need service mesh. Use it if:
+  - 50+ microservices
+  - Need mTLS everywhere
+  - Complex traffic routing requirements
+- **Decision:** Buy managed service mesh or don't use one
+
+**Scenario: "Managed Kubernetes (EKS/GKE) vs self-hosted?"**
+- **Managed ($150/cluster/month):**
+  - Control plane managed, auto-updates, integrated
+  - Still need to manage worker nodes
+- **Self-hosted (save $150/month, cost $10K/month in engineering time):**
+  - Full control, complex setup, manual updates
+- **Decision:** Always use managed unless you have 10+ dedicated Kubernetes experts
+
+**Scenario: "Observability - should we buy DataDog or build our own?"**
+- **Build cost:** $500K-1M first year, $300K/year ongoing
+- **DataDog:** $100-300K/year depending on scale
+- **Build if:** > 500 engineers, unique observability needs, cost > $1M/year
+- **Buy if:** < 500 engineers, standard needs, want to focus on product
+- **Hidden build costs:** Integration with all services, alerting, dashboards, on-call for observability platform
+
+**Scenario: "Should finance approve this observability tooling?"**
+- **Cost:** $200K/year for observability seems expensive
+- **Value:** Reduce MTTR from 2 hours to 15 minutes
+  - 100 incidents/year × 1.75 hours saved × 3 engineers × $100/hour = $52.5K/year
+  - Prevented outages: 10/year × $50K revenue impact = $500K/year saved
+- **ROI:** $752K value for $200K cost = 276% ROI
+- **Decision:** Approve - observability prevents costly outages
+
+**Scenario: "Terraform Cloud vs self-hosted Terraform?"**
+- **Terraform Cloud:** $20/user/month = $24K/year for 100 engineers
+- **Self-hosted:** Free but requires CI/CD integration, state management, RBAC
+  - Engineering cost: $50K/year
+- **Decision:** Use Terraform Cloud unless you already have robust CI/CD for state management
+
 ---
 
 ## 3. Platform Investment ROI
@@ -263,6 +398,95 @@ True ROI: Hard to quantify, but likely 3-5x over 3 years
 - Team < 30 engineers (not enough leverage)
 - Business model unproven (premature scaling)
 - Existential priorities (fundraising, shipping core product)
+
+### ROI Calculation Scenarios
+
+**Scenario: "How do we calculate platform team ROI?"**
+- **Direct metrics:**
+  - Deployment frequency: 1/week → 10/day
+  - Lead time: 2 weeks → 2 days
+  - MTTR: 4 hours → 30 minutes
+  - Onboarding time: 4 weeks → 1 week
+- **Value calculation:**
+  - 50 engineers × 5 hours/week saved = 250 hours/week
+  - 250 hours × 50 weeks × $100/hour = $1.25M/year
+- **Platform cost:** 8 engineers × $200K = $1.6M
+- **ROI:** Breakeven year 1, positive thereafter
+- **Intangibles:** Better hiring, less burnout, faster innovation
+
+**Scenario: "Justifying Kubernetes migration"**
+- **Cost of migration:** 6 months × 4 engineers = $400K
+- **Benefits:**
+  - Better resource utilization: Save 30% on infrastructure = $150K/year
+  - Faster deployments: 2 hours → 10 minutes = 100 hours/week saved = $250K/year
+  - Multi-cloud optionality (intangible)
+- **Payback period:** 12-18 months
+- **Decision:** Worth it if infrastructure cost > $500K/year or scaling quickly
+
+**Scenario: "Platform team value - what should we measure?"**
+- **Avoid vanity metrics:**
+  - ❌ Number of deployments (more isn't always better)
+  - ❌ Lines of code (meaningless)
+  - ❌ Tickets closed (focuses on wrong thing)
+- **Focus on impact metrics:**
+  - ✅ Developer survey scores (NPS for platform)
+  - ✅ Time to first deployment (new engineer)
+  - ✅ DORA metrics (deployment frequency, lead time, MTTR, change failure rate)
+  - ✅ Time saved per engineer per week
+  - ✅ Incident reduction (fewer production issues)
+
+**Scenario: "Infrastructure cost per developer?"**
+- **Calculate:** Total infrastructure cost / number of engineers
+- **Benchmarks:**
+  - Early stage: $2-5K per engineer/month
+  - Scale-up: $5-10K per engineer/month
+  - Enterprise: $10-20K per engineer/month
+- **High cost reasons:** Data-intensive, ML workloads, inefficient usage, overprovisioning
+- **Optimization:** Right-size instances, use spot/reserved, implement autoscaling
+
+**Scenario: "How do we measure developer velocity improvement?"**
+- **Lead Time for Changes:**
+  - Before: 2 weeks from commit to production
+  - After platform investment: 2 days
+  - Improvement: 10x faster
+- **Developer satisfaction:**
+  - Survey: "How easy is it to deploy a new service?" 1-10
+  - Target: Improve from 4 → 8
+- **Time to productivity:**
+  - New engineer: Productive in 1 week vs 4 weeks
+  - Value: 3 weeks × 20 new hires/year = 60 weeks saved
+
+**Scenario: "Service mesh cost-benefit analysis"**
+- **Cost:**
+  - 2 engineers × 6 months setup = $200K
+  - Ongoing: 1 engineer × $200K/year
+  - Overhead: 10% latency increase, 20% infrastructure increase = $100K/year
+  - **Total:** $200K + $300K/year
+- **Benefit:**
+  - mTLS everywhere (security win)
+  - Traffic management (canary deploys)
+  - Observability (better debugging)
+  - **Value:** Hard to quantify - mainly security/compliance
+- **Decision:** Only do it if:
+  - Security/compliance requirement
+  - 50+ microservices
+  - Sophisticated traffic management needs
+
+**Scenario: "Platform break-even point"**
+- **Question:** "When does investing in platform pay off?"
+- **Formula:** Break-even when (Time Saved Value) > (Platform Cost)
+- **Example:**
+  - Platform team cost: $2M/year (10 engineers)
+  - Time saved: 100 engineers × 10 hours/week × $100/hour = $5M/year
+  - **Break-even:** Immediate (2.5x return)
+- **Reality:** Benefits compound - velocity improvements enable more velocity
+
+**Scenario: "Opportunity cost of platform investment"**
+- **Question:** "What else could these 8 engineers build instead of platform?"
+- **Option A:** Platform team → enables 100 engineers to be 20% more productive = 20 FTE equivalent
+- **Option B:** Product team → ship 2-3 more features/year
+- **Trade-off:** Short-term features vs long-term productivity
+- **Decision:** At 50+ engineers, platform investment usually wins
 
 ### Investment Priorities by Stage
 
