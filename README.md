@@ -166,7 +166,7 @@ skill-name/
 
 ```
 .claude/
-├── skills/                 # 20 production skills
+├── skills/                 # 25 production skills (15 infrastructure + 5 manager + 5 developer)
 │   ├── Development (5):
 │   │   ├── backend-dev-guidelines/  (11 resource files)
 │   │   ├── frontend-dev-guidelines/ (10 resource files)
@@ -226,7 +226,7 @@ dev/
 
 ## Component Catalog
 
-### 🎨 Skills (20 Total)
+### 🎨 Skills (25 Total)
 
 **Development Skills (5):**
 
@@ -257,6 +257,16 @@ dev/
 | [**observability-engineering**](.claude/skills/observability-engineering/) | 6 | Distributed tracing, OpenTelemetry, APM | Observability, monitoring |
 | [**database-engineering**](.claude/skills/database-engineering/) | 4 | PostgreSQL, query optimization | Database administration |
 | [**api-engineering**](.claude/skills/api-engineering/) | 4 | REST, GraphQL, API gateways | API design, rate limiting |
+
+**Manager & Leadership Skills (5):**
+
+| Skill | Purpose | Best For |
+|-------|---------|----------|
+| [**engineering-management**](.claude/skills/engineering-management/) | Team organization, hiring, career development | People managers, team leads |
+| [**technical-leadership**](.claude/skills/technical-leadership/) | Architecture review, technical decisions, risk assessment | Non-technical managers making tech decisions |
+| [**infrastructure-strategy**](.claude/skills/infrastructure-strategy/) | Cloud strategy, build vs buy, ROI, roadmapping | Leaders setting infrastructure direction |
+| [**engineering-operations-management**](.claude/skills/engineering-operations-management/) | On-call, incidents, SLO negotiation, metrics | Managers running SRE/platform teams |
+| [**budget-and-cost-management**](.claude/skills/budget-and-cost-management/) | Budget planning, cost allocation, FinOps | Managers handling infrastructure budgets |
 
 **All skills follow the modular pattern** - main file + resource files for progressive disclosure.
 
@@ -343,6 +353,34 @@ dev/
 - Auto-activation via skill-rules.json
 
 **👉 [Infrastructure skills guide →](.claude/skills/README.md)**
+
+### 👔 Manager & Leadership Skills (5)
+
+**For engineering managers, tech leads, and leaders:**
+
+| Skill | Coverage | Best For |
+|-------|----------|----------|
+| [**engineering-management**](.claude/skills/engineering-management/) | Team organization (platform, SRE, security teams), hiring & skill assessment, career ladders (IC & manager tracks), resource planning & capacity models, technical interviews (72 questions), one-on-one guides | People managers leading infrastructure/platform teams - hiring, team structures, career development, 1-on-1s, performance management |
+| [**technical-leadership**](.claude/skills/technical-leadership/) | Architecture review frameworks, evaluating technical proposals, risk assessment (complexity, scale, operational, people, technology), tech debt prioritization, when to push back, questions for teams, decision-making for non-technical managers | Managers making technical decisions - reviewing architecture, evaluating proposals, balancing quality vs speed, pushing back on over-engineering |
+| [**infrastructure-strategy**](.claude/skills/infrastructure-strategy/) | Cloud strategy (single vs multi-cloud), build vs buy decisions with TCO analysis, platform ROI calculations, multi-year roadmapping (70-20-10 rule), technology radar (adopt/trial/assess/hold), migration planning (12-48 month timelines) | Leaders setting infrastructure direction - cloud strategy, investment justification, long-term planning, vendor selection |
+| [**engineering-operations-management**](.claude/skills/engineering-operations-management/) | On-call management & compensation models, burnout prevention, blameless postmortems, incident management for managers, SLO negotiation with product teams, DORA metrics vs vanity metrics, toil reduction, balancing features vs reliability (70-20-10 allocation) | Managers running SRE/platform teams - on-call operations, incident reviews, SLO setting, sustainable operations culture, metrics that matter |
+| [**budget-and-cost-management**](.claude/skills/budget-and-cost-management/) | Annual infrastructure budget planning, cloud cost governance (AWS/Azure/GCP/OCI), cost allocation (showback vs chargeback), FinOps practices, platform investment ROI frameworks, budget negotiation with finance, cost per user & unit economics analysis | Managers handling budgets - planning infrastructure budgets, FinOps, cost allocation, justifying spend to CFO, negotiating budget cuts |
+
+**All manager skills include:**
+- Practical frameworks and templates
+- Real-world scenarios and decision trees
+- Non-technical explanations (no deep code knowledge required)
+- Integration with technical skills
+- Auto-activation via skill-rules.json
+
+**Key audience:**
+- Engineering managers (people managers, not technical hands-on)
+- Directors of Engineering / Platform / SRE
+- VPs of Engineering
+- CTOs and technical executives
+- Tech leads transitioning to management
+
+**👉 Complements technical skills with people management, strategic planning, and business acumen**
 
 ### 💬 Slash Commands (8)
 
