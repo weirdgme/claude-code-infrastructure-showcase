@@ -21,7 +21,7 @@ The original project by **diet103** provided the breakthrough patterns and core 
 
 **This fork extends the original with:**
 - 🎯 **15 infrastructure engineering skills** (vs. original 5 development skills)
-- 🎯 **155 total resource files** covering platform, security, SRE, cloud (AWS/Azure/GCP/OCI), cybersecurity, systems, network, build, architecture, observability, and more
+- 🎯 **165+ total resource files** covering platform, security, SRE, cloud (AWS/Azure/GCP/OCI), cybersecurity, systems, network, build, architecture, observability, and more
 - 🎯 **Infrastructure focus** while maintaining all original development patterns
 
 **Massive thanks to diet103** for creating the foundation, documenting the patterns, and sharing this invaluable work with the community. This showcase builds directly on their innovation and production-tested insights.
@@ -190,13 +190,13 @@ skill-name/
 │   │   ├── database-engineering/         (4 resource files)
 │   │   └── api-engineering/              (4 resource files)
 │   └── skill-rules.json    # Skill activation configuration
-├── hooks/                  # 16 hooks for automation
-│   ├── skill-activation-prompt.*  (ESSENTIAL)
-│   ├── post-tool-use-tracker.sh   (ESSENTIAL)
+├── hooks/                  # 11 hooks for automation
+│   ├── skill-activation-prompt.*  (ESSENTIAL - bash, PowerShell, TypeScript)
+│   ├── post-tool-use-tracker.*    (ESSENTIAL - bash, PowerShell)
 │   ├── security-policy-check.sh   (infrastructure)
 │   ├── terraform-validator.sh     (infrastructure)
 │   ├── k8s-manifest-validator.sh  (infrastructure)
-│   └── ... 11 more
+│   └── ... 6 more
 ├── agents/                 # 21 specialized agents
 │   ├── Development (10):
 │   │   ├── code-architecture-reviewer.md
@@ -244,7 +244,7 @@ dev/
 |-------|-----------|---------|----------|
 | [**platform-engineering**](.claude/skills/platform-engineering/) | 11 | IaC, Kubernetes, GitOps | Platform architecture |
 | [**devsecops**](.claude/skills/devsecops/) | 13 | Security, compliance, CSPM | Security automation, FedRAMP/CMMC |
-| [**cybersecurity**](.claude/skills/cybersecurity/) | 3 | Threat modeling, SecOps, incident response, AppSec, pen testing | Security architecture, SIEM/SOC, breach response |
+| [**cybersecurity**](.claude/skills/cybersecurity/) | 1 | Threat modeling, SecOps, incident response, AppSec, pen testing | Security architecture, SIEM/SOC, breach response |
 | [**sre**](.claude/skills/sre/) | 11 | SLO/SLI, observability | Site reliability |
 | [**release-engineering**](.claude/skills/release-engineering/) | 10 | CI/CD, deployments | Release pipelines |
 | [**cloud-engineering**](.claude/skills/cloud-engineering/) | 13 | AWS, Azure, GCP, OCI, GovCloud | Cloud architecture, cleared environments |
@@ -272,16 +272,19 @@ dev/
 
 **👉 [How to integrate skills →](.claude/skills/README.md)**
 
-### 🪝 Hooks (6)
+### 🪝 Hooks (11 files, 9 unique hooks)
 
-| Hook | Type | Essential? | Customization |
-|------|------|-----------|---------------|
-| skill-activation-prompt | UserPromptSubmit | ✅ YES | ✅ None needed |
-| post-tool-use-tracker | PostToolUse | ✅ YES | ✅ None needed |
-| tsc-check | Stop | ⚠️ Optional | ⚠️ Heavy - monorepo only |
-| trigger-build-resolver | Stop | ⚠️ Optional | ⚠️ Heavy - monorepo only |
-| error-handling-reminder | Stop | ⚠️ Optional | ⚠️ Moderate |
-| stop-build-check-enhanced | Stop | ⚠️ Optional | ⚠️ Moderate |
+| Hook | Type | Essential? | Variants | Customization |
+|------|------|-----------|----------|---------------|
+| skill-activation-prompt | UserPromptSubmit | ✅ YES | .sh, .ps1, .ts | ✅ None needed |
+| post-tool-use-tracker | PostToolUse | ✅ YES | .sh, .ps1 | ✅ None needed |
+| error-handling-reminder | Stop | ⚠️ Optional | .sh, .ts | ⚠️ Moderate |
+| tsc-check | Stop | ⚠️ Optional | .sh | ⚠️ Heavy - monorepo only |
+| trigger-build-resolver | Stop | ⚠️ Optional | .sh | ⚠️ Heavy - monorepo only |
+| stop-build-check-enhanced | Stop | ⚠️ Optional | .sh | ⚠️ Moderate |
+| terraform-validator | PreToolUse | 🔧 Infrastructure | .sh | ⚠️ Optional - IaC validation |
+| k8s-manifest-validator | PreToolUse | 🔧 Infrastructure | .sh | ⚠️ Optional - K8s validation |
+| security-policy-check | PreToolUse | 🔧 Infrastructure | .sh | ⚠️ Optional - Security checks |
 
 **Start with the two essential hooks** - they enable skill auto-activation and work out of the box.
 

@@ -1,6 +1,6 @@
 # Infrastructure Skills - Complete Usage Guide
 
-**Quick Reference:** How to use all 8 infrastructure skills in the Claude Code Infrastructure Showcase.
+**Quick Reference:** How to use all 15 infrastructure skills in the Claude Code Infrastructure Showcase.
 
 ---
 
@@ -295,6 +295,237 @@ When a skill activates, Claude will mention it and provide relevant guidance fro
 
 ---
 
+### 9. General IT Engineering (`general-it-engineering`)
+
+**What it covers:**
+- ITIL framework and ITSM
+- Service management and incident management
+- Change management processes
+- Asset management and CMDB
+- Business continuity and disaster recovery
+- IT governance and compliance
+
+**Activates when you:**
+- Mention: ITIL, ITSM, service desk, change management, incident management
+
+**Example usage:**
+```bash
+# Scenario 1: ITIL implementation
+"Help me implement ITIL change management process"
+
+# Scenario 2: Service desk
+"Design a service desk ticketing workflow"
+
+# Scenario 3: IT governance
+"Create IT governance policies for compliance"
+```
+
+**Key resource files:**
+- `itil-framework.md` - ITIL v4 processes
+- `service-management.md` - ITSM best practices
+- `change-management.md` - Change control procedures
+
+---
+
+### 10. Infrastructure Architecture (`infrastructure-architecture`)
+
+**What it covers:**
+- Architecture Decision Records (ADRs)
+- Multi-region design patterns
+- Disaster recovery planning
+- Capacity planning and forecasting
+- System design principles
+- Security architecture patterns
+- Workload classification (CUI, Secret, TS/SCI, ITAR)
+- Cleared environment architectures
+
+**Activates when you:**
+- Mention: ADR, architecture, multi-region, DR, capacity planning, cleared environments, workload classification
+
+**Example usage:**
+```bash
+# Scenario 1: ADR creation
+"Help me create an ADR for switching from REST to GraphQL"
+
+# Scenario 2: Multi-region design
+"Design a multi-region architecture with active-active failover"
+
+# Scenario 3: Cleared environments
+"Design architecture for TS/SCI classified workloads in AWS GovCloud"
+```
+
+**Key resource files:**
+- `architecture-decision-records.md` - ADR templates and examples
+- `multi-region-patterns.md` - Geographic distribution patterns
+- `cleared-environment-architecture.md` - Classified workload patterns
+- `workload-classification.md` - CUI, Secret, TS/SCI, ITAR guidance
+
+---
+
+### 11. Documentation as Code (`documentation-as-code`)
+
+**What it covers:**
+- Technical writing best practices
+- Markdown standards and conventions
+- API documentation (OpenAPI/Swagger)
+- Diagram generation (PlantUML, Mermaid)
+- Documentation sites (Docusaurus, MkDocs)
+- Documentation automation and CI/CD
+- README engineering and templates
+
+**Activates when you:**
+- Edit: `README.md`, `*.md` files, OpenAPI specs
+- Mention: documentation, OpenAPI, Swagger, diagrams, technical writing
+
+**Example usage:**
+```bash
+# Scenario 1: API documentation
+"Generate OpenAPI spec from my REST API"
+
+# Scenario 2: Documentation site
+"Set up Docusaurus for our project documentation"
+
+# Scenario 3: Diagrams
+"Create architecture diagrams with PlantUML"
+```
+
+**Key resource files:**
+- `api-documentation.md` - OpenAPI/Swagger patterns
+- `diagram-generation.md` - PlantUML, Mermaid, C4 models
+- `documentation-automation.md` - CI/CD for docs
+
+---
+
+### 12. Observability Engineering (`observability-engineering`)
+
+**What it covers:**
+- Distributed tracing patterns
+- OpenTelemetry implementation
+- APM tools (DataDog, New Relic, Dynatrace)
+- Log aggregation strategies
+- Correlation and context propagation
+- Observability cost optimization
+- Service mesh observability
+
+**Activates when you:**
+- Mention: tracing, OpenTelemetry, APM, distributed tracing, observability
+
+**Example usage:**
+```bash
+# Scenario 1: Distributed tracing
+"Implement OpenTelemetry distributed tracing"
+
+# Scenario 2: APM setup
+"Set up DataDog APM for microservices"
+
+# Scenario 3: Log correlation
+"Implement trace ID correlation across services"
+```
+
+**Key resource files:**
+- `distributed-tracing.md` - OpenTelemetry patterns
+- `apm-tools.md` - DataDog, New Relic, Dynatrace
+- `log-aggregation.md` - ELK, Loki, CloudWatch Logs
+
+---
+
+### 13. Database Engineering (`database-engineering`)
+
+**What it covers:**
+- PostgreSQL and MySQL administration
+- Query optimization and indexing
+- Database replication strategies
+- Backup and recovery procedures
+- Connection pooling and scaling
+- Database performance tuning
+
+**Activates when you:**
+- Edit: SQL files, database migrations
+- Mention: PostgreSQL, MySQL, database, query optimization, replication
+
+**Example usage:**
+```bash
+# Scenario 1: Query optimization
+"Optimize this slow PostgreSQL query"
+
+# Scenario 2: Replication setup
+"Set up PostgreSQL streaming replication"
+
+# Scenario 3: Backup strategy
+"Design a backup and recovery strategy for production databases"
+```
+
+**Key resource files:**
+- `postgresql-fundamentals.md` - PostgreSQL best practices
+- `query-optimization.md` - Index strategies, EXPLAIN plans
+- `database-replication.md` - Streaming replication, failover
+
+---
+
+### 14. API Engineering (`api-engineering`)
+
+**What it covers:**
+- REST API design patterns
+- GraphQL schema design
+- API versioning strategies
+- Rate limiting and throttling
+- API gateways (Kong, Tyk, AWS API Gateway)
+- API security and authentication
+
+**Activates when you:**
+- Mention: REST API, GraphQL, API gateway, rate limiting, API versioning
+
+**Example usage:**
+```bash
+# Scenario 1: REST API design
+"Design a RESTful API for user management"
+
+# Scenario 2: API gateway
+"Set up Kong API gateway with rate limiting"
+
+# Scenario 3: GraphQL schema
+"Create a GraphQL schema for our data model"
+```
+
+**Key resource files:**
+- `rest-api-design.md` - REST best practices
+- `graphql-patterns.md` - Schema design, resolvers
+- `api-versioning.md` - Versioning strategies
+- `rate-limiting.md` - Rate limiting patterns
+
+---
+
+### 15. Cybersecurity (`cybersecurity`)
+
+**What it covers:**
+- Threat modeling (STRIDE, PASTA, DREAD)
+- Security operations (SOC, SIEM, SOAR, EDR/XDR)
+- Incident response and forensics
+- Application security (OWASP, SAST, DAST)
+- Penetration testing methodologies
+- Network security and Zero Trust
+- IAM and cryptography
+
+**Activates when you:**
+- Mention: threat modeling, SIEM, SOC, incident response, pen testing, OWASP, Zero Trust
+
+**Example usage:**
+```bash
+# Scenario 1: Threat modeling
+"Perform STRIDE threat modeling for our API"
+
+# Scenario 2: Incident response
+"Guide me through investigating a security breach"
+
+# Scenario 3: Application security
+"Review application for OWASP Top 10 vulnerabilities"
+```
+
+**Key resource files:**
+- `security-architecture.md` - Comprehensive cybersecurity coverage
+
+---
+
 ## 🎭 Multi-Skill Scenarios
 
 Some tasks activate **multiple skills** simultaneously. Here's how they work together:
@@ -513,15 +744,22 @@ Automatic validation before commits:
 | Domain | Skill | Resources | Status |
 |--------|-------|-----------|--------|
 | Platform & IaC | platform-engineering | 11 | ✅ |
-| Security | devsecops | 11 | ✅ |
+| Security | devsecops | 13 | ✅ |
+| Cybersecurity | cybersecurity | 1 | ✅ |
 | Reliability | sre | 11 | ✅ |
 | Deployment | release-engineering | 10 | ✅ |
-| Cloud | cloud-engineering | 10 | ✅ |
-| Systems | systems-engineering | 10 | ✅ |
+| Cloud | cloud-engineering | 13 | ✅ |
+| Systems | systems-engineering | 12 | ✅ |
 | Network | network-engineering | 10 | ✅ |
 | Build | build-engineering | 10 | ✅ |
+| IT Operations | general-it-engineering | 10 | ✅ |
+| Architecture | infrastructure-architecture | 13 | ✅ |
+| Documentation | documentation-as-code | 10 | ✅ |
+| Observability | observability-engineering | 6 | ✅ |
+| Database | database-engineering | 4 | ✅ |
+| API Engineering | api-engineering | 4 | ✅ |
 
-**Total: 8 complete skills, 83 resource files, ~48,000 lines of production-tested guidance**
+**Total: 15 complete skills, 130+ resource files, ~75,000+ lines of production-tested guidance**
 
 ---
 
