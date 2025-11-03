@@ -1,6 +1,11 @@
 #!/bin/bash
 set -e
 
+# Set default CLAUDE_PROJECT_DIR if not set
+if [ -z "$CLAUDE_PROJECT_DIR" ]; then
+    export CLAUDE_PROJECT_DIR="$(cd "$(dirname "$0")/../.." && pwd)"
+fi
+
 # Stop event hook that runs build checks and provides instructions for error resolution
 # This runs when Claude Code finishes responding
 

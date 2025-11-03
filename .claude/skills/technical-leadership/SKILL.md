@@ -5,6 +5,10 @@
 > You don't need to be the best coder on your team. You need to ask the right questions, evaluate proposals effectively, and make decisions that balance technical excellence with business needs.
 
 ---
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 SKILL ACTIVATED: technical-leadership
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 
 ## When to Use This Skill
 

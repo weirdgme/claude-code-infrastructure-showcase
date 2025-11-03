@@ -1,6 +1,10 @@
 ---
 description: Build engineering covering build systems (Make, Gradle, Maven, Bazel), compilation optimization, dependency management, artifact repositories, build pipelines, reproducible builds, build caching, monorepo strategies, supply chain security, and performance optimization. Use when creating build processes, optimizing build times, managing dependencies, or implementing CI build pipelines. (project)
 ---
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 SKILL ACTIVATED: build-engineering
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 
 # Build Engineering
 

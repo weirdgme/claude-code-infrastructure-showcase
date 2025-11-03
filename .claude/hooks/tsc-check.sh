@@ -3,7 +3,7 @@
 # TSC Hook with Visible Output
 # Uses stderr for visibility in Claude Code main interface
 
-CLAUDE_PROJECT_DIR="${CLAUDE_PROJECT_DIR:-$HOME/project}"
+export CLAUDE_PROJECT_DIR="${CLAUDE_PROJECT_DIR:-$HOME/project}"
 HOOK_INPUT=$(cat)
 SESSION_ID="${session_id:-default}"
 CACHE_DIR="$HOME/.claude/tsc-cache/$SESSION_ID"

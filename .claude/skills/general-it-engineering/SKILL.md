@@ -1,6 +1,10 @@
 ---
 description: General IT engineering covering ITIL framework, service management, change management, asset management, incident/problem management, business continuity, IT governance, help desk operations, enterprise monitoring, and automation orchestration. Use when managing IT services, implementing ITSM processes, or establishing IT governance. (project)
 ---
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 SKILL ACTIVATED: general-it-engineering
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 
 # General IT Engineering
 

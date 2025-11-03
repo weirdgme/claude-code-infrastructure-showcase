@@ -318,6 +318,10 @@ This skill activates when you:
 - Plan infrastructure migrations
 
 ---
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 SKILL ACTIVATED: infrastructure-architecture
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 
 **Total Resources:** 11 detailed guides covering all aspects of infrastructure architecture
 **Focus:** Design patterns, resilience, scalability, cost-awareness

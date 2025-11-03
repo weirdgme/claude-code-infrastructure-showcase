@@ -1,6 +1,10 @@
 ---
 description: Systems engineering and administration covering Linux and Windows administration, networking fundamentals, performance tuning, configuration management (Ansible/Chef/Puppet), system monitoring, shell scripting (bash/PowerShell), and troubleshooting. Use when managing Linux or Windows systems, optimizing performance, automating operations, or debugging system issues. (project)
 ---
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 SKILL ACTIVATED: systems-engineering
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 
 # Systems Engineering & Administration
 

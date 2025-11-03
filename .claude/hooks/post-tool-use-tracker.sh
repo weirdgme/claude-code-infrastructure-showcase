@@ -1,6 +1,11 @@
 #!/bin/bash
 set -e
 
+# Set default CLAUDE_PROJECT_DIR if not set
+if [ -z "$CLAUDE_PROJECT_DIR" ]; then
+    export CLAUDE_PROJECT_DIR="$(cd "$(dirname "$0")/../.." && pwd)"
+fi
+
 # Post-tool-use hook that tracks edited files and their repos
 # This runs after Edit, MultiEdit, or Write tools complete successfully
 

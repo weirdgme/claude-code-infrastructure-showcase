@@ -92,6 +92,10 @@ async function handleRequest(req, res) {
 - **backend-dev-guidelines**: Application instrumentation
 
 ---
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 SKILL ACTIVATED: observability-engineering
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 
 **Total Resources:** 6 focused guides on observability engineering
 **Focus:** Distributed tracing, OpenTelemetry, APM, cost optimization

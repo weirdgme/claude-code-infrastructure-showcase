@@ -41,7 +41,10 @@ async function main() {
         const prompt = data.prompt.toLowerCase();
 
         // Load skill rules
-        const projectDir = process.env.CLAUDE_PROJECT_DIR || '$HOME/project';
+        const projectDir = process.env.CLAUDE_PROJECT_DIR;
+        if (!projectDir) {
+            throw new Error('CLAUDE_PROJECT_DIR environment variable must be set');
+        }
         const rulesPath = join(projectDir, '.claude', 'skills', 'skill-rules.json');
         const rules: SkillRules = JSON.parse(readFileSync(rulesPath, 'utf-8'));
 
@@ -79,9 +82,10 @@ async function main() {
 
         // Generate output if matches found
         if (matchedSkills.length > 0) {
-            let output = '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n';
-            output += '🎯 SKILL ACTIVATION CHECK\n';
-            output += '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n';
+            let output = '\n';
+            output += '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n';
+            output += '🎯 SKILL ACTIVATION REQUIRED\n';
+            output += '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n';
 
             // Group by priority
             const critical = matchedSkills.filter(s => s.config.priority === 'critical');
@@ -90,31 +94,36 @@ async function main() {
             const low = matchedSkills.filter(s => s.config.priority === 'low');
 
             if (critical.length > 0) {
-                output += '⚠️ CRITICAL SKILLS (REQUIRED):\n';
-                critical.forEach(s => output += `  → ${s.name}\n`);
+                output += '⚠️  CRITICAL SKILLS (MUST USE):\n';
+                critical.forEach(s => output += `   → ${s.name}\n`);
                 output += '\n';
             }
 
             if (high.length > 0) {
-                output += '📚 RECOMMENDED SKILLS:\n';
-                high.forEach(s => output += `  → ${s.name}\n`);
+                output += '📚 RECOMMENDED SKILLS (SHOULD USE):\n';
+                high.forEach(s => output += `   → ${s.name}\n`);
                 output += '\n';
             }
 
             if (medium.length > 0) {
-                output += '💡 SUGGESTED SKILLS:\n';
-                medium.forEach(s => output += `  → ${s.name}\n`);
+                output += '💡 SUGGESTED SKILLS (MAY USE):\n';
+                medium.forEach(s => output += `   → ${s.name}\n`);
                 output += '\n';
             }
 
             if (low.length > 0) {
                 output += '📌 OPTIONAL SKILLS:\n';
-                low.forEach(s => output += `  → ${s.name}\n`);
+                low.forEach(s => output += `   → ${s.name}\n`);
                 output += '\n';
             }
 
-            output += 'ACTION: Use Skill tool BEFORE responding\n';
-            output += '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n';
+            output += '⚡ IMPORTANT INSTRUCTIONS:\n';
+            output += '   1. You MUST use the Skill tool to activate recommended skills\n';
+            output += '   2. Use Skill tool BEFORE providing your response\n';
+            output += '   3. Skills will display activation banners when loaded\n';
+            output += '   4. Example: Use Skill tool with command "skill-developer"\n';
+            output += '\n';
+            output += '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n';
 
             console.log(output);
         }

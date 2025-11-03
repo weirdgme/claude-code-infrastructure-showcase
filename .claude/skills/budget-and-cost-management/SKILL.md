@@ -5,6 +5,10 @@
 > This skill helps managers plan infrastructure budgets, implement cost governance, allocate costs across teams, and build business cases for platform investments. Focused on financial management, not technical cost optimization.
 
 ---
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 SKILL ACTIVATED: budget-and-cost-management
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 
 ## When to Use This Skill
 

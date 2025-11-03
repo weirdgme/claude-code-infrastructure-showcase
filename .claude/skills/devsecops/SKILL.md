@@ -364,6 +364,10 @@ This skill activates when you:
 - Set up security monitoring
 
 ---
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 SKILL ACTIVATED: devsecops
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 
 **Total Resources:** 11 detailed guides covering all aspects of DevSecOps
 **Focus:** Shift-left security, automation, continuous improvement

@@ -1,6 +1,10 @@
 ---
 description: Network engineering and architecture covering network design, TCP/IP protocols, routing and switching, load balancing, network security, SDN, service mesh networking, DNS management, VPN, and network troubleshooting. Use when designing networks, implementing network infrastructure, debugging connectivity, or securing network traffic. (project)
 ---
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 SKILL ACTIVATED: network-engineering
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 
 # Network Engineering
 

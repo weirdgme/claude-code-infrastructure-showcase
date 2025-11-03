@@ -5,6 +5,10 @@
 > This skill focuses on team organization, hiring, career development, resource planning, and people management—not hands-on technical implementation. Complements the technical skills in this repository.
 
 ---
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 SKILL ACTIVATED: engineering-management
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 
 ## When to Use This Skill
 

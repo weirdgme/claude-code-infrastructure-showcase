@@ -1,6 +1,10 @@
 ---
 description: Platform engineering and architecture guide covering Infrastructure as Code, container orchestration (Kubernetes/Docker), service mesh, developer platforms, internal developer portals, platform automation, multi-tenancy, resource management, and infrastructure standards. Use when designing platform architecture, implementing IaC, managing Kubernetes clusters, building developer platforms, or establishing infrastructure standards. (project)
 ---
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 SKILL ACTIVATED: platform-engineering
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 
 # Platform Engineering & Architecture
 

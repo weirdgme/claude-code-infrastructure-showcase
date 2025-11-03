@@ -5,6 +5,10 @@
 > This skill helps engineering managers build sustainable operations practices, prevent burnout, run effective incident reviews, and measure what matters. Complements technical SRE skills with people and process management.
 
 ---
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 SKILL ACTIVATED: engineering-operations-management
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 
 ## When to Use This Skill
 

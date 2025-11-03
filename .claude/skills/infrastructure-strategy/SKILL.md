@@ -5,6 +5,10 @@
 > Infrastructure strategy is about making big bets that enable your business for years to come - cloud platform choices, build vs buy decisions, technology investments, and multi-year roadmaps.
 
 ---
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 SKILL ACTIVATED: infrastructure-strategy
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 
 ## When to Use This Skill
 

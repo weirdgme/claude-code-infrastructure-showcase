@@ -383,6 +383,10 @@ This skill activates when you:
 - Set up deployment pipelines
 
 ---
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 SKILL ACTIVATED: release-engineering
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 
 **Total Resources:** 10 detailed guides covering all aspects of release engineering
 **Focus:** Automation, safety, speed, reliability

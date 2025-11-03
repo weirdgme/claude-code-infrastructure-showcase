@@ -1,6 +1,10 @@
 ---
 description: Cloud engineering guide covering AWS, Azure, GCP, and Oracle Cloud (OCI) services, multi-cloud strategies, serverless architectures, cloud-native patterns, cost optimization, cloud networking, security, migration strategies, and Well-Architected frameworks. Use when designing cloud infrastructure, implementing cloud services, optimizing cloud costs, or planning cloud migrations. (project)
 ---
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 SKILL ACTIVATED: cloud-engineering
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 
 # Cloud Engineering
 

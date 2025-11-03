@@ -52,6 +52,10 @@ Automatically activates when working on:
 - **cloud-engineering**: Managed databases (RDS, Aurora)
 
 ---
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 SKILL ACTIVATED: database-engineering
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 
 **Total Resources:** 4 foundational guides (community can expand!)
 **Status:** Basic coverage - contributions welcome
